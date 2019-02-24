@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://hfanss.com/404.html</loc>
+    
+    <lastmod>2019-02-24T12:08:44.205Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://hfanss.com/links/index.html</loc>
     
     <lastmod>2019-02-24T12:02:02.569Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>https://hfanss.com/check-link/index.html</loc>
     
     <lastmod>2019-01-24T02:05:16.998Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://hfanss.com/404.html</loc>
-    
-    <lastmod>2019-01-23T11:21:02.896Z</lastmod>
     
   </url>
   
