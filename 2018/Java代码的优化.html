@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Java代码的优化-幻凡ss
+  </title>
+  <meta name="description" content="专注Java • 分享生活 • 记录人生">
+  
+  <meta name="keywords" content="java,IT,幻凡ss,幻凡">
+  
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta name="google-site-verification" content="q4xnHYM3-sVfNnyEwMGqknU2CTdojzJvQ5nGfN3EJv8">
+
+  <link rel="shortcut icon" href="/img/favicon.ico">
+  <link rel="icon" href="/img/favicon.ico">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdn.bootcss.com/Swiper/4.4.6/css/swiper.min.css">
+ <link rel="stylesheet" href="/style.css">
+ 
+
+</head>
+</html>
+<body class="l_body">
+
+ <div classdivclass="d_out" onmouseover="this.className='d_over'" onmouseout="this.className='d_out'">
+    <a title="飞回顶部" href="#0" class="cd-top">Top</a>
+ </div>
+
+    <header class="l_header" id="no-header">
+	<div class="wrapper">
+		<div class="nav-main container container--flex">
+			<a class="logo flat-box" href="/">
+				<img class="xwbk-logo" src="/img/blog_nav_logo.png">
+			</a>
+				<div class="menu">
+					<ul class="h-list">
+                        
+    						
+
+    							<!-- 导航栏图标和菜单 -->
+    							<li>
+    								<a class="nav-home flat-box" href="/">
+    									首页
+    								</a>
+    							</li>
+    							<!-- 菜单hot图标 -->
+    							<!-- <img src="">g class="hot_gif" src="/img/hot.gif"> -->
+    						
+
+    							<!-- 导航栏图标和菜单 -->
+    							<li>
+    								<a class="nav-archives flat-box" href="/archives/index.html">
+    									时间轴
+    								</a>
+    							</li>
+    							<!-- 菜单hot图标 -->
+    							<!-- <img src="">g class="hot_gif" src="/img/hot.gif"> -->
+    						
+
+    							<!-- 导航栏图标和菜单 -->
+    							<li>
+    								<a class="nav-about flat-box" href="/about/index.html">
+    									关于
+    								</a>
+    							</li>
+    							<!-- 菜单hot图标 -->
+    							<!-- <img src="">g class="hot_gif" src="/img/hot.gif"> -->
+    						
+
+    							<!-- 导航栏图标和菜单 -->
+    							<li>
+    								<a class="nav-comment flat-box" href="/comment/index.html">
+    									留言
+    								</a>
+    							</li>
+    							<!-- 菜单hot图标 -->
+    							<!-- <img src="">g class="hot_gif" src="/img/hot.gif"> -->
+    						
+        			 
+
+        			<!-- 二级菜单 -->
+<!-- 				<div id="top">
+   				<div id="top_right">          
+    			<div class="top_nav">
+     			本站主题
+			     <ul class="nav_1">         
+			      <a style="font-size:16px" href="https://www.showdoc.cc/xwmp"><li>主题简介</li></a>
+			      <a style="font-size:16px" href="http://qm.qq.com/cgi-bin/qm/qr?k=Zx1XyD_1jAXIoVyiYRmgimXrovdWnYkP"><li>QQ群</li></a>
+			     </ul>
+			    </div> -->
+
+					</ul>
+				</div>				
+			
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索内容">
+						<span class="icon"><i class="fa fa-search fa-fw"></i></span>
+					</form>
+				</div>
+			
+			<ul class="switcher h-list">
+				
+					<li class="s-search"><a class="fa fa-search fa-fw" href="javascript:void(0)"></a></li>
+				&nbsp;&nbsp;
+				<li class="s-menu"><a class="fa fa-bars fa-fw" href="javascript:void(0)"></a></li>&nbsp;&nbsp;
+			</ul>
+		</div>
+
+		<div class="nav-sub container container--flex">
+			<a class="logo" href="javascript:void(0)">
+			</a>
+		</div>
+	</div>	
+
+</header>
+	<aside class="menu-phone">
+		<nav>
+      <ul>
+          
+              
+                  <li>
+                      <a class="nav-home flat-box nav flat-box" href="/">
+                      首页
+                      </a>
+                  </li>
+                  <!-- <img class="hot_gif_phone" src="/img/hot.gif"> -->
+              
+                  <li>
+                      <a class="nav-archives flat-box nav flat-box" href="/archives/index.html">
+                      时间轴
+                      </a>
+                  </li>
+                  <!-- <img class="hot_gif_phone" src="/img/hot.gif"> -->
+              
+                  <li>
+                      <a class="nav-about flat-box nav flat-box" href="/about/index.html">
+                      关于
+                      </a>
+                  </li>
+                  <!-- <img class="hot_gif_phone" src="/img/hot.gif"> -->
+              
+                  <li>
+                      <a class="nav-comment flat-box nav flat-box" href="/comment/index.html">
+                      留言
+                      </a>
+                  </li>
+                  <!-- <img class="hot_gif_phone" src="/img/hot.gif"> -->
+              
+       
+       <li><a class="nav-materialplus flat-box nav flat-box" href="https://www.showdoc.cc/xwmp">本站主题</a></li>
+      </ul>
+		</nav>
+	</aside>
+
+    <div>
+    <div class="container clearfix">
+        <div class="l_main">
+      <article id="post-Java代码的优化" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
+    <section class="meta">
+
+        <h1 class="title">
+            <center>Java代码的优化</center>
+        </h1>
+
+
+ <center>
+    <time>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+    <span>发表于 </span>2018-12-25-星期二&nbsp;&nbsp;|&nbsp;&nbsp;
+    <i class="fas fa-eye fa-fw" aria-hidden="true"></i>&nbsp;
+    阅读 &nbsp;(
+    <span id="busuanzi_value_page_pv">计算中...</span>&nbsp;)
+    
+    </time>
+</center>
+
+
+
+    <hr class="zdyhr">
+       
+    </section>
+
+    <section class="article typo">
+
+        <div class="article-entry" itemprop="articleBody">
+            <p>做java也很久了，自己也积累了一些代码优化方面的心得，一个好的代码是体现程序员水平的最直观体现，下面来看一下代码方面比较常见的优化点<br>（本文在书写过程中也参考了一些其他文章，在这里就不一一赘述，内容也比较浅显，忘大神轻喷，如有错误的地方，还请在评论中指出来，我会一一改正）</p>
+<h2 id="1-减少对变量的重复计算–》for循环的优化"><a href="#1-减少对变量的重复计算–》for循环的优化" class="headerlink" title="1.减少对变量的重复计算–》for循环的优化"></a>1.减少对变量的重复计算–》for循环的优化</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> for (int i = 0; i &lt; args.length; i++)   </span><br><span class="line">&#123;   </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 更改为</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (int i = 0,index=args.length; i &lt; index; i++)    </span><br><span class="line">&#123;  </span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 原理：每次在i++的时候都会重新计算一次args.length,优化之后只会计算一次  </p>
+<p>当然这个也是相对于args很大时，当args不大时，其实效率也差不多，但是我们养成个好习惯总是好的。而且它可以直接修改for循环的模版实现，比较方便 </p>
+<p> 修改eclipse的模版：Preferences-&gt;java-&gt;Editor-&gt;Templates找到for修改为上面的内容 </p>
+<h2 id="2-底层使用可变数组的数据结构尽量指定长度"><a href="#2-底层使用可变数组的数据结构尽量指定长度" class="headerlink" title="2.底层使用可变数组的数据结构尽量指定长度"></a>2.底层使用可变数组的数据结构尽量指定长度</h2><p>例如最常用的ArrayList,HashMap </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List list = new ArrayList&lt;&gt;(10);  </span><br><span class="line"> </span><br><span class="line">Map map = new HashMap&lt;&gt;(10);</span><br></pre></td></tr></table></figure>
+<p>原理：可变数组都有一个扩容政策，当数据量超过它的加载因子时，就会执行扩容操作<br>当指定长度时，只有在超过指定的长度时，才会执行扩容操作，所以我们使用的时候应尽量预估它的大小，尽量指定大小</p>
+<h2 id="3-String类尽量使用StringBuffer、StringBuilder"><a href="#3-String类尽量使用StringBuffer、StringBuilder" class="headerlink" title="3.String类尽量使用StringBuffer、StringBuilder"></a>3.String类尽量使用StringBuffer、StringBuilder</h2><p>这个涉及到jvm的内存分配，举个例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str = “abc”;    String str2 = str + “ccd”;</span><br></pre></td></tr></table></figure>
+<p>jvm会在堆内存中开辟3个空间，1为“abc”,2为“ccd”,3为“abcccd”,最终str2指向3，1和2因为没有被引用，会在GC回收机制内被回收，而GC的开销是相当大的，所以应尽量避免<br>那么使用StringBuffer是什么情况呢</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">StringBuffer str =“abc”;    str.append(“ccd”);</span><br></pre></td></tr></table></figure>
+<p>jvm只会在堆空间中开辟一个空间“abc”,执行append时只会在“abc”的空间上+“ccd”<br>因此避免了GC的回收，也避免了内存的浪费<br>同样是为了获取到“abcccd”,但第二种方式明显更有效率<br>那怎么判断是使用StringBuffer还是StringBuilder的呢？<br>如果有线程安全的考虑使用StringBuffer，无则使用StringBuilder，线程安全也是一个比较高的开销</p>
+<h2 id="4-使用equals-方法时常量尽量写前面"><a href="#4-使用equals-方法时常量尽量写前面" class="headerlink" title="4.使用equals()方法时常量尽量写前面"></a>4.使用equals()方法时常量尽量写前面</h2><p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Brand brand = new Brand();           </span><br><span class="line">brand.setImgUrl(&quot;dddddddddd&quot;);          </span><br><span class="line">// brand.setName(&quot;HFanss&quot;);           </span><br><span class="line">String ss = &quot;HFanss&quot;;           </span><br><span class="line">if (brand.getName().equals(ss))          </span><br><span class="line">&#123;          </span><br><span class="line">	System.err.println(&quot;相同&quot;);          </span><br><span class="line">&#125;else&#123;              </span><br><span class="line">	System.err.println(&quot;不相同&quot;);          </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>抛出空指针异常，应修改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if (ss.equals(brand.getName())</span><br></pre></td></tr></table></figure>
+<p>这时候会输出   不相同。<br>原理：equals的源码解释 当比较对象（常量ss）为空时，抛出空指针异常，<br>而被比较对象（brand.getName()）为空时,则直接以 false结束</p>
+<h2 id="5-尽量采用懒加载的策略，就是在需要的时候才创建"><a href="#5-尽量采用懒加载的策略，就是在需要的时候才创建" class="headerlink" title="5.尽量采用懒加载的策略，就是在需要的时候才创建"></a>5.尽量采用懒加载的策略，就是在需要的时候才创建</h2><p>如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;HFanss&quot;;             </span><br><span class="line">if (&quot;2&quot;.equals(status))                </span><br><span class="line">&#123;                    </span><br><span class="line">	list.add(str);                </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>应该为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if (&quot;2&quot;.equals(status))            </span><br><span class="line">&#123;                 </span><br><span class="line">    String str = &quot;HFanss&quot;;                </span><br><span class="line">    list.add(str);            </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理：这个应该很容易看懂的，当if不成立时，创建的字符串就没用了，面临GC回收，应该有效避免，写在if内部</p>
+<h2 id="6-在数值运算时，遇到偶数乘、除偶数倍时，尽量使用位移运算"><a href="#6-在数值运算时，遇到偶数乘、除偶数倍时，尽量使用位移运算" class="headerlink" title="6.在数值运算时，遇到偶数乘、除偶数倍时，尽量使用位移运算"></a>6.在数值运算时，遇到偶数乘、除偶数倍时，尽量使用位移运算</h2><p>如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int a = 2;    </span><br><span class="line">int b = 16;    </span><br><span class="line">System.err.println(a&lt;&lt;5);//等同于  222222   即232    System.err.println(b&gt;&gt;2);//等同于  16/2/2      即16/4</span><br></pre></td></tr></table></figure>
+<p>原理：即使使用  2*32、16/4的方式，最终在底层的算法还是位移，因为位移是基于2进制的算法，任何运算都会转换成二进制再运算，那我们直接使用二进制就会提升一部分效率</p>
+<h2 id="7-对象引用的优化"><a href="#7-对象引用的优化" class="headerlink" title="7. 对象引用的优化"></a>7. 对象引用的优化</h2><p>如： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List list = new ArrayList&lt;&gt;();          </span><br><span class="line">for (int i = 0; i &lt; 1000; i++)          </span><br><span class="line">&#123;              </span><br><span class="line">    Object obj  = new Object();                 </span><br><span class="line">    list.add(obj);          </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>应该为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List list = new ArrayList&lt;&gt;();          </span><br><span class="line">Object obj = null;          </span><br><span class="line">for (int i = 0; i &lt; 1000; i++)          </span><br><span class="line">&#123;              </span><br><span class="line">    obj  = new Object();                 </span><br><span class="line">    list.add(obj);          </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>原理：我们的目的只是list.add(obj)这一步，<br>前者obj引用会在栈空间中有1000个，但是最终只会用到1个，<br>后者obj引用在栈空间只有1个，提升效果不言而喻！</p>
+<h2 id="8-慎重使用static静态"><a href="#8-慎重使用static静态" class="headerlink" title="8.慎重使用static静态"></a>8.慎重使用static静态</h2><p>使用静态后，编译时会直接创建，而且直到程序结束，一般只会用在常量，公共方法上，因为需要保证随时随地使用，基于这一需求，它不太使用于对象的创建上，会浪费内存</p>
+<h2 id="9-常量的优化"><a href="#9-常量的优化" class="headerlink" title="9.常量的优化"></a>9.常量的优化</h2><p>相信这个大家应该都很熟悉，常量名大写 用以和变量区分，而且加上static final修饰，保证使用的速度和不被外界力量所改变</p>
+<h2 id="10-将变量转换成字符串时尽量使用to-string-方法"><a href="#10-将变量转换成字符串时尽量使用to-string-方法" class="headerlink" title="10.将变量转换成字符串时尽量使用to.string()方法"></a>10.将变量转换成字符串时尽量使用to.string()方法</h2><p>一般有3种方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Integer s = 5;    </span><br><span class="line">s.toString();    </span><br><span class="line">String.valueOf(s);//源码显示调用了Integer.toString()方法，而且会在调用前做空判断    s+“”;//源码显示使用StringBuilder实现，先用append方法拼接，再用toString()方法对比而言，直接调用最底层的toString()方法无疑是效率最高的</span><br></pre></td></tr></table></figure>
+<p>接下来是一些体系上的优化，分为 结构优化，日志优化，可读性优化，异常优化<br>结构优化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A. action层尽量不要做参数的校验和逻辑书写，它只负责请求的转发和响应，入参和出参</span><br><span class="line"></span><br><span class="line">B. Service层逻辑要清晰，尽量不要有if,for的出现，全部封装到公共方法去调用</span><br><span class="line"></span><br><span class="line">C. DAO层只提供持久层相关操作，如封装参数进map供持久层使用，尽量不要有逻辑在里面，所有的逻辑应都在service里完成</span><br></pre></td></tr></table></figure>
+<p>日志优化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A. 方法开始后、结束前书写日志</span><br><span class="line"></span><br><span class="line">B. 抓取异常时书写日志</span><br><span class="line"></span><br><span class="line">C. 特殊情况时书写。如需要提前return时</span><br></pre></td></tr></table></figure>
+<p>可读性优化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A. 类、方法必须要有注释</span><br><span class="line"></span><br><span class="line">B. 在一些比较大的逻辑前加上注释</span><br><span class="line"></span><br><span class="line">C. 一个完美的service层，应逻辑清晰，一行代码代表一个逻辑，通篇下来可读性非常强</span><br></pre></td></tr></table></figure>
+<p>异常优化：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">A. 异常应只用来进行错误处理，而不是逻辑处理（异常也是高开销的操作）</span><br><span class="line"></span><br><span class="line">B. 善用多种异常，但是在service层应只有一个 try cath来抓取多个异常，并分别处理</span><br><span class="line"></span><br><span class="line">C. 异常理应在service层全部处理完，不能再继续往上抛（理论上可以接续抛，但service本来就是处理逻辑的，尽量在本层处理完）</span><br></pre></td></tr></table></figure>
+<p>以上是代码优化方面的一些常见点，当然这并不是全部，一个完美的代码是有很多优化点的，而且代码优化方面也不止这些，本人只是基于自己的经验给新来的同志一些借鉴之处。<br>除了代码优化，还有一些容器优化，项目优化，网络优化，缓存优化等等，编程是一个枯燥的过程，望共勉之！<br>最后给大家安利一个好用的插件–》阿里巴巴代码规范检测插件<br><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.cos.ap-shanghai.myqcloud.com/2018/12/upload_ee8ca2_167d9ee016e__8000_00000034.png" alt="2018061017121995.png"></a>;)<br>红框内的就是执行检测后提示的信息，会提示不符合阿里巴巴规范的代码<br>安装使用教程 ： <a href="https://blog.csdn.net/lx_nhs/article/details/79099582" target="_blank" rel="noopener">点我</a></p>
+        </div>
+        <br><br>
+
+<div title="未经允许不得转载" class="post-copyright">未经允许不得转载： 幻凡ss » <span style="color: #ce8134">Java代码的优化</span></div>
+
+
+
+ 
+<div class="share">
+<span style="vertical-align: text-bottom;font-size:14px">分享到：</span>
+<a title="分享到微博" href="javascript:" onclick="window.open('http://service.weibo.com/share/share.php?url=https://hfanss.com/2018/Java代码的优化.html&sharesource=weibo&title=【Java代码的优化 - 幻凡ss】 做java也很久了，自己也积累了一些代码优化方面的心得，一个好的代码是体现程序员水平的最直观体现，下面来看一下代码方面比较常见的优化点...&pic=https://blog-1252958858.file.myqcloud.com/2018/12/upload_ee8ca2_167d9ee016e__8000_00000033.jpg&appkey=2706825840','','height=400,width=711,left=100,right=100,scrollbars=yes,status=yes')">
+
+<span class="iconfont icon-weibo"></span>
+
+<a title="分享到QQ空间" href="javascript:" onclick="window.open('https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://hfanss.com/2018/Java代码的优化.html&sharesource=qzone&title=【Java代码的优化 - 幻凡ss】&pics=https://blog-1252958858.file.myqcloud.com/2018/12/upload_ee8ca2_167d9ee016e__8000_00000033.jpg&summary=做java也很久了，自己也积累了一些代码优化方面的心得，一个好的代码是体现程序员水平的最直观体现，下面来看一下代码方面比较常见的优化点...','','height=598,width=711,scrollbars=yes,status=yes')">
+
+<span class="iconfont icon-qqkongjian"></span>
+
+<a title="分享到QQ好友" href="javascript:" onclick="window.open('http://connect.qq.com/widget/shareqq/index.html?url=https://hfanss.com/2018/Java代码的优化.html&title=【Java代码的优化 - 幻凡ss】&pics=https://blog-1252958858.file.myqcloud.com/2018/12/upload_ee8ca2_167d9ee016e__8000_00000033.jpg&summary=幻凡ss&desc=','','height=598,width=711,scrollbars=yes,status=yes')">
+
+<span class="iconfont icon-QQ"></span>
+
+</a></a></a></div>
+
+
+
+       
+            <div class="article-tags tags">
+                
+                   <a href="/tags/Java/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Java</a>
+                
+            </div>
+        
+
+        
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2018/jsp网站ico图标设置.html" rel="prev" title="jsp网站ico图标设置">
+                                  
+                                      jsp网站ico图标设置
+                                  
+                                </a>
+                            </h4>
+                    </span></section>
+                    
+                    <div class="fenge">
+                    </div>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2018/Java利用构造函数对实体类的属性进行初始化.html" rel="next" title="JDBC链接数据库">
+                                    
+                                        JDBC链接数据库
+                                    
+                                </a>
+                            </h4>
+                        </span></section></div>
+                    </section>
+                        
+            
+    
+
+</article>
+
+<br>
+
+<!-- 显示推荐文章和评论 -->
+
+    <article class="post white-box comments">
+        <section class="article typo">
+
+            
+                <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;文章推荐</h4>
+        <ul>
+            
+                <li><a href="https://hfanss.com/2018/利用构造函数对实体类的属性进行初始化.html">Java利用构造函数对实体类的属性进行初始化</a></li>
+            
+                <li><a href="https://hfanss.com/2018/jsp网站ico图标设置.html">jsp网站ico图标设置</a></li>
+            
+                <li><a href="https://hfanss.com/2018/Java利用构造函数对实体类的属性进行初始化.html">JDBC链接数据库</a></li>
+            
+                <li><a href="https://hfanss.com/2018/腾讯云COS-本地图片上传.html">腾讯云COS图床制作</a></li>
+            
+                <li><a href="https://hfanss.com/2018/500小时学习计划.html">500小时学习计划</a></li>
+            
+        </ul>
+    </div>
+            
+
+             
+            
+
+
+            
+            
+            
+            
+                <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+                <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                <div id="vcomments"></div>
+                <script>
+                  new Valine({
+                    el: '#vcomments',
+                    appId: "5GMAO3V5MqR9DTfMnd73m8zT-gzGzoHsz",
+                    appKey: "f6Ve1tpYqYSBefe5xp0OCKxR"
+                  })
+                </script>
+            
+            
+        
+    
+
+        
+
+        </section>
+    </article>
+
+
+<script>
+    window.subData = {
+        title: 'Java代码的优化',
+        tools: true
+    }
+</script>
+        </div>
+        <aside class="l_side">
+            <section class="m_widget author">
+        
+            <div class="header">
+                <img class="avatar" style="border-radius: 95px" src="/img/author.jpg">
+            </div>
+            
+        
+        <div class="content">
+            
+               <center><h1>幻凡ss</h1></center>
+            
+            
+                <div>
+                    <center><span>IT小青年</span></center>
+                </div>
+            
+        </div>
+
+            <div class="social-wrapper">
+
+             <a style="background-color: #27ccc0" title="邮箱" href="mailto:hfans@foxmail.com" class="social-icon flat-box" target="_blank" rel="external">
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+
+             <a style="background-color: #12b7f5" title="QQ(2158798)" href="http://wpa.qq.com/msgrd?V=3&uin=2158798&Site=QQ&Menu=yes" class="social-icon flat-box" target="_blank" rel="external">
+                <i class="fab fa-qq" aria-hidden="true"></i>
+            </a>
+
+             <a style="background-color: #f45a8d" title="github" href="https://github.com/hfanss/" class="social-icon flat-box" target="_blank" rel="external">
+                <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+
+            <a style="background-color: #EE2C2C" title="CSDN" href="https://me.csdn.net/q2158798" class="social-icon flat-box" target="_blank" rel="external">
+                <i class="pull_icon pull_icon8" aria-hidden="true">C</i>
+            </a>
+
+             <a style="background-color: #8c9496" title="RSS订阅" href="/atom.xml" class="social-icon flat-box" target="_blank" rel="external">
+                <i class="fas fa-rss" aria-hidden="true"></i>
+            </a>
+
+            </div>
+
+    </section>
+    
+
+    
+        <section class="m_widget toc-wrapper">
+        <header class="header xuxian">
+            <div style="font-size: 18px">目录</div>
+            <div class="wrapper"><a style="margin-right: 30px" class="s-toc rightBtn" title="固定到顶部" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div>
+        </header>
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-减少对变量的重复计算–》for循环的优化"><span class="toc-text">1.减少对变量的重复计算–》for循环的优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-底层使用可变数组的数据结构尽量指定长度"><span class="toc-text">2.底层使用可变数组的数据结构尽量指定长度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-String类尽量使用StringBuffer、StringBuilder"><span class="toc-text">3.String类尽量使用StringBuffer、StringBuilder</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-使用equals-方法时常量尽量写前面"><span class="toc-text">4.使用equals()方法时常量尽量写前面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-尽量采用懒加载的策略，就是在需要的时候才创建"><span class="toc-text">5.尽量采用懒加载的策略，就是在需要的时候才创建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-在数值运算时，遇到偶数乘、除偶数倍时，尽量使用位移运算"><span class="toc-text">6.在数值运算时，遇到偶数乘、除偶数倍时，尽量使用位移运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-对象引用的优化"><span class="toc-text">7. 对象引用的优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-慎重使用static静态"><span class="toc-text">8.慎重使用static静态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-常量的优化"><span class="toc-text">9.常量的优化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-将变量转换成字符串时尽量使用to-string-方法"><span class="toc-text">10.将变量转换成字符串时尽量使用to.string()方法</span></a></li></ol>
+        </div>
+    </section>
+    
+
+    
+
+    
+        <section class="m_widget categories">
+    <header class="header xuxian">
+        <div style="font-size: 18px">文章分类</div>
+    </header>
+    <div class="content">
+        
+            <ul class="entry">
+                
+                    <li><a class="flat-box" href="/categories/Java/">
+                        <div class="name">
+                            <i class="fas fa-bookmark" aria-hidden="true"></i>
+                            &nbsp;&nbsp;Java
+                        </div>
+                        <div class="badge">3</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Java代码优化/">
+                        <div class="name">
+                            <i class="fas fa-bookmark" aria-hidden="true"></i>
+                            &nbsp;&nbsp;Java代码优化
+                        </div>
+                        <div class="badge">1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Java打字游戏/">
+                        <div class="name">
+                            <i class="fas fa-bookmark" aria-hidden="true"></i>
+                            &nbsp;&nbsp;Java打字游戏
+                        </div>
+                        <div class="badge">1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/Tomcat/">
+                        <div class="name">
+                            <i class="fas fa-bookmark" aria-hidden="true"></i>
+                            &nbsp;&nbsp;Tomcat
+                        </div>
+                        <div class="badge">1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/hexo/">
+                        <div class="name">
+                            <i class="fas fa-bookmark" aria-hidden="true"></i>
+                            &nbsp;&nbsp;hexo
+                        </div>
+                        <div class="badge">4</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/个人/">
+                        <div class="name">
+                            <i class="fas fa-bookmark" aria-hidden="true"></i>
+                            &nbsp;&nbsp;个人
+                        </div>
+                        <div class="badge">1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/学习记录/">
+                        <div class="name">
+                            <i class="fas fa-bookmark" aria-hidden="true"></i>
+                            &nbsp;&nbsp;学习记录
+                        </div>
+                        <div class="badge">1</div></a></li>
+                
+                    <li><a class="flat-box" href="/categories/点滴生活/">
+                        <div class="name">
+                            <i class="fas fa-bookmark" aria-hidden="true"></i>
+                            &nbsp;&nbsp;点滴生活
+                        </div>
+                        <div class="badge">1</div></a></li>
+                
+            </ul>
+        
+    </div>
+</section>
+    
+
+    
+        <section class="m_widget tagcloud">
+        <header class="header xuxian">
+            <div style="font-size: 18px">标签集合</div>
+        </header>
+        
+        <div class="content">
+            
+            <a href="/tags/Java/">Java&nbsp;(7)</a>
+            
+            <a href="/tags/Maupassant主题优化/">Maupassant主题优化&nbsp;(1)</a>
+            
+            <a href="/tags/gitee-hexo/">gitee+hexo&nbsp;(1)</a>
+            
+            <a href="/tags/hexo-maupassant/">hexo-maupassant&nbsp;(1)</a>
+            
+            <a href="/tags/hexo主题/">hexo主题&nbsp;(1)</a>
+            
+            <a href="/tags/hexo主题优化/">hexo主题优化&nbsp;(1)</a>
+            
+            <a href="/tags/hexo博客/">hexo博客&nbsp;(1)</a>
+            
+            <a href="/tags/hexo插件/">hexo插件&nbsp;(1)</a>
+            
+            <a href="/tags/hexo教程/">hexo教程&nbsp;(1)</a>
+            
+            <a href="/tags/学习计划/">学习计划&nbsp;(1)</a>
+            
+            <a href="/tags/屠城hexo主题优化版/">屠城hexo主题优化版&nbsp;(1)</a>
+            
+            <a href="/tags/年度计划/">年度计划&nbsp;(1)</a>
+            
+            <a href="/tags/点滴生活/">点滴生活&nbsp;(1)</a>
+            
+            <a href="/tags/码云-hexo/">码云+hexo&nbsp;(1)</a>
+            
+            <a href="/tags/腾讯云COS图床/">腾讯云COS图床&nbsp;(1)</a>
+             
+        </div>
+    </section>
+    
+
+    
+        <section class="m_widget music">
+    <header class="header xuxian">
+        <div style="font-size: 18px">音乐</div>
+        <a class="rightBtn" title="打开博主的网易云音乐主页" target="_blank" rel="external nofollow noopener noreferrer" href="https://music.163.com/#/playlist?id=2270688529#填写歌单号"><i class="fas fa-external-link-square-alt fa-fw"></i></a>
+    </header>
+    <div class="content">
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="450" src="//music.163.com/outchain/player?type=0&id=2270688529#填写歌单号&auto=0&height=450"></iframe>
+    </div>
+</section>
+    
+
+    
+        <section id="fixPara" class="m_widget links">
+    <header class="header xuxian">
+    <div style="font-size: 18px">热门推荐</div>
+    </header>
+    <div class="content">
+        <ul class="entry" id="links">
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/Maupassant主题、屠城主题优化版.html">
+                    <div class="name">
+                        
+                            <img src="/img/hotrec-1.png">
+                        
+                        &nbsp;&nbsp;Maupassant主题优化、屠城hexo主题优化版
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/腾讯云COS图床制作.html">
+                    <div class="name">
+                        
+                            <img src="/img/hotrec-2.png">
+                        
+                        &nbsp;&nbsp;腾讯云COS图床制作
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/码云+hexo搭建个性博客.html">
+                    <div class="name">
+                        
+                            <img src="/img/hotrec-3.png">
+                        
+                        &nbsp;&nbsp;码云+hexo搭建个性博客
+                    </div>
+                </a></li>
+            
+                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/hexo博客常用插件及教程.html">
+                    <div class="name">
+                        
+                            <img src="/img/hotrec-all.png">
+                        
+                        &nbsp;&nbsp;hexo博客常用插件及教程
+                    </div>
+                </a></li>
+            
+        </ul>
+    <br>
+</div></section>
+        </aside>
+    </div>
+    </div>
+    <footer id="footer" class="clearfix">
+    <div class="footer-copyright">
+      <span>
+        &copy;<img class="nofancybox" src="https://blog-1252958858.file.myqcloud.com/2019/01/20171011091220_jhnecdkp.gif" style="border-radius: 5px" width="15px" height="15px">&nbsp;2019 幻凡ss  &nbsp;<a href="http://www.miibeian.gov.cn/" target="_Blank">豫ICP备18024944号-1
+      </a></span>
+    </div>
+
+
+<div>
+	<span id="runtime_span"></span>
+</div>
+<div>
+	总访客数：<span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span>&nbsp;&nbsp;|&nbsp;
+	总访问量：<span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span>
+</div>
+<script type="text/javascript">
+function show_runtime(){
+  window.setTimeout("show_runtime()",1000);
+  X=new Date("4/1/2018 1:1:1");
+  Y=new Date();T=(Y.getTime()-X.getTime());M=24*60*60*1000;
+  a=T/M;A=Math.floor(a);
+  b=(a-A)*24;B=Math.floor(b);
+  c=(b-B)*60;C=Math.floor((b-B)*60);
+  D=Math.floor((c-C)*60);
+  runtime_span.innerHTML="本站已稳定运行：&nbsp;"+A+"天"+B+"小时"+C+"分"+D+"秒"}show_runtime();
+</script>
+
+
+    
+        <div style="margin-top: 10px">
+          <b>优秀博客友链:</b>&nbsp;
+          
+              
+              <li style="display: inline">
+                  <a href="https://www.wushile.top" target="_blank">&nbsp;小吴博客&nbsp;|</a>&nbsp;
+              </li>
+
+              
+          
+          <a href="/links/index.html" target="_blank">&nbsp;更多友链&nbsp;</a>&nbsp;
+        </div>
+    
+
+    <div class="footer-hr"></div>
+
+</footer>
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+    <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/sweetalert/2.1.2/sweetalert.min.js"></script>
+<script src="//cdn.bootcss.com/Swiper/4.4.6/js/swiper.min.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<script type="text/javascript">
+    $(".zdya").each(function(){
+       var len=$(this).text().length; 
+       var kuan=window.screen.width;
+       if(kuan > 720){
+         var str="";
+         str=$(this).text().substring(0,90)+"...";
+         $(this).html(str);                   
+       }else if (kuan < 720) {
+         var str="";
+         str=$(this).text().substring(0,80)+"...";
+         $(this).html(str);                   
+       }
+    });
+
+</script>
+
+
+    <script>
+        var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+        var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+        var ALGOLIA_API_KEY = "";
+        var ALGOLIA_APP_ID = "";
+        var ALGOLIA_INDEX_NAME = "";
+        var AZURE_SERVICE_NAME = "";
+        var AZURE_INDEX_NAME = "";
+        var AZURE_QUERY_KEY = "";
+        var BAIDU_API_ID = "";
+        var SEARCH_SERVICE = "hexo" || "hexo";
+        var ROOT = "/"||"/";
+        if(!ROOT.endsWith('/'))ROOT += '/';
+    </script>
+
+
+<!-- <script src="/js/get.time.js"></script> -->
+<script src="/js/back.top.js"></script>
+<script src="/js/search.js"></script>
+<script src="/js/app.js"></script>
+
+
+
+    
+
+
+        
+  
+
+
+
+
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+    effect: 'slide',
+    loop: true, 
+    autoplay: true,
+    pagination: {
+      el: '.swiper-pagination',
+    },
+  
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    
+  })  
+</script>
+
+
+<script>document.body.oncopy = function() { swal("复制成功", "如需转载文章请注意声明原文出处，谢谢合作！","success");};</script>
+
+
+<script>
+    document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState == 'hidden') {
+        normal_title = document.title;
+        document.title = '你有新的消息哦！';
+    } else document.title = normal_title;
+});
+</script>
+
+<div class="cover"></div>
+</body>
