@@ -3,6 +3,12 @@ var customSearch;
 (function ($) {
 
 	"use strict";
+	const scrollCorrection = 90; // (header height = 50px) + (gap = 20px)
+	function scrolltoElement(elem, correction) {
+		correction = correction || scrollCorrection;
+		const $elem = elem.href ? $(elem.getAttribute('href')) : $(elem);
+		$('html, body').animate({ 'scrollTop': $elem.offset().top - correction }, 400);
+	};
 
 	function setHeader() {
 		if (!window.subData) return;
@@ -29,19 +35,6 @@ var customSearch;
 			}
 		});
 
-		// bind events to every btn
-		const $commentTarget = $('#comments');
-		if ($commentTarget.length) {
-			$comment.click(e => { e.preventDefault(); e.stopPropagation(); scrolltoElement($commentTarget); });
-		} else $comment.remove();
-
-		const $tocTarget = $('.toc-wrapper');
-		if ($tocTarget.length && $tocTarget.children().length) {
-			$toc.click((e) => { e.stopPropagation(); $tocTarget.toggleClass('active'); });
-		} else $toc.remove();
-
-		$top.click(()=>scrolltoElement(document.body));
-
 	}
 	function setHeaderMenu() {
 		var $headerMenu = $('header .menu');
@@ -54,12 +47,12 @@ var customSearch;
 				$item.addClass('active').siblings().removeClass('active');
 				$underline.css({
 					left: $item.position().left,
-					width: $item.innerWidth()
+					width: $item.innerWidth(),
 				});
 			} else {
 				$underline.css({
 					left: 0,
-					width: 0
+					width: 0,
 				});
 			}
 			if (!transition) {
@@ -114,13 +107,58 @@ var customSearch;
 		})
 	}
 	
+		function setTocToggle() {
+		const $toc = $('.toc-wrapper');
+		if ($toc.length === 0) return;
+		
+		$(document).click(() => $toc.removeClass('active'));
+
+		$toc.on('click', 'a', (e) => {
+			e.preventDefault();
+			e.stopPropagation();
+			if (e.target.tagName === 'A') {
+                scrolltoElement(e.target);
+            } else if (e.target.tagName === 'SPAN') {
+                scrolltoElement(e.target.parentElement);
+            }
+            $toc.removeClass('active');
+		});
+
+		const liElements = Array.from($toc.find('li a'));
+		//function animate above will convert float to int.
+		const getAnchor = () => liElements.map(elem => Math.floor($(elem.getAttribute('href')).offset().top - scrollCorrection));
+
+		let anchor = getAnchor();
+		const scrollListener = () => {
+			const scrollTop = $('html').scrollTop() || $('body').scrollTop();
+			if (!anchor) return;
+			//binary search.
+			let l = 0, r = anchor.length - 1, mid;
+			while (l < r) {
+				mid = (l + r + 1) >> 1;
+				if (anchor[mid] === scrollTop) l = r = mid;
+				else if (anchor[mid] < scrollTop) l = mid;
+				else r = mid - 1;
+			}
+			$(liElements).removeClass('active').eq(l).addClass('active');
+		}
+		$(window)
+			.resize(() => {
+				anchor = getAnchor();
+				scrollListener();
+			})
+			.scroll(() => {
+				scrollListener();
+			});
+		scrollListener();
+	}
+
 	$(function () {
 		setHeader();
 		setHeaderMenu();
 		setHeaderMenuPhone();
 		setHeaderSearch();
-		// getHitokoto();
-		// getPicture();
+		setTocToggle();
 
 		if (SEARCH_SERVICE === 'google') {
 			customSearch = new GoogleCustomSearch({
@@ -182,24 +220,3 @@ document.onkeydown = function(e) {
         }
     }
 };
-
-var url = window.location.href;
-window.onload=
-    function(){
-        var oDiv = document.getElementById("fixPara"),
-            H = 0,
-            Y = oDiv        
-        while (Y) {
-            H += Y.offsetTop; 
-            Y = Y.offsetParent;
-        }
-        window.onscroll = function()
-        {
-            var s = document.body.scrollTop || document.documentElement.scrollTop;
-            if(s>H && url.indexOf(".html") == -1) {
-                oDiv.style = "position:fixed;top:60px;"
-            } else {
-                oDiv.style = ""
-        }
-    }
-}
