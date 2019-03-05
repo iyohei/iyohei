@@ -155,38 +155,6 @@
   </entry>
   
   <entry>
-    <title>jsp网站ico图标设置</title>
-    <link href="https://hfanss.com/2018/jsp%E7%BD%91%E7%AB%99ico%E5%9B%BE%E6%A0%87%E8%AE%BE%E7%BD%AE.html"/>
-    <id>https://hfanss.com/2018/jsp网站ico图标设置.html</id>
-    <published>2018-12-25T12:29:38.000Z</published>
-    <updated>2019-03-02T10:48:55.803Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>学习记录：小技巧</p><p>web项目中设置ico图标</p></blockquote><blockquote><p>ico图标放在webapp下</p></blockquote><p>在jsp页面中引入（ps:每个jsp都要引入,最好放在header或者footer既头部或尾部页面中，可以做到一处引用，多处使用）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--  网站图标 --&gt;&lt;link rel=&quot;shortcut icon&quot; href=&quot;../static/img/favicon.ico&quot;&gt;</span><br></pre></td></tr></table></figure><p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.file.myqcloud.com/2019/01/upload__72bb97c_16828430b8f__8000_00000000.jpg" alt="QQ图片20181024210453.jpg"></a>;)</p><p>各位可根据目录结构和引入地址适当更改</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;学习记录：小技巧&lt;/p&gt;
-&lt;p&gt;web项目中设置ico图标&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;ico图标放在webapp下&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;在jsp页面中引入（ps:每个jsp都要引入,最
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://hfanss.com/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://hfanss.com/tags/Java/"/>
-    
-  </entry>
-  
-  <entry>
     <title>JDBC链接数据库</title>
     <link href="https://hfanss.com/2018/Java%E5%88%A9%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AF%B9%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E5%88%9D%E5%A7%8B%E5%8C%96.html"/>
     <id>https://hfanss.com/2018/Java利用构造函数对实体类的属性进行初始化.html</id>
@@ -241,6 +209,38 @@
   </entry>
   
   <entry>
+    <title>jsp网站ico图标设置</title>
+    <link href="https://hfanss.com/2018/jsp%E7%BD%91%E7%AB%99ico%E5%9B%BE%E6%A0%87%E8%AE%BE%E7%BD%AE.html"/>
+    <id>https://hfanss.com/2018/jsp网站ico图标设置.html</id>
+    <published>2018-12-25T12:29:38.000Z</published>
+    <updated>2019-03-02T10:48:55.803Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>学习记录：小技巧</p><p>web项目中设置ico图标</p></blockquote><blockquote><p>ico图标放在webapp下</p></blockquote><p>在jsp页面中引入（ps:每个jsp都要引入,最好放在header或者footer既头部或尾部页面中，可以做到一处引用，多处使用）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--  网站图标 --&gt;&lt;link rel=&quot;shortcut icon&quot; href=&quot;../static/img/favicon.ico&quot;&gt;</span><br></pre></td></tr></table></figure><p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.file.myqcloud.com/2019/01/upload__72bb97c_16828430b8f__8000_00000000.jpg" alt="QQ图片20181024210453.jpg"></a>;)</p><p>各位可根据目录结构和引入地址适当更改</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;学习记录：小技巧&lt;/p&gt;
+&lt;p&gt;web项目中设置ico图标&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ico图标放在webapp下&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在jsp页面中引入（ps:每个jsp都要引入,最
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://hfanss.com/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://hfanss.com/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
     <title>500小时学习计划</title>
     <link href="https://hfanss.com/2018/500%E5%B0%8F%E6%97%B6%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92.html"/>
     <id>https://hfanss.com/2018/500小时学习计划.html</id>
@@ -273,6 +273,33 @@
   </entry>
   
   <entry>
+    <title>腾讯云COS图床制作</title>
+    <link href="https://hfanss.com/2018/%E8%85%BE%E8%AE%AF%E4%BA%91COS-%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.html"/>
+    <id>https://hfanss.com/2018/腾讯云COS-本地图片上传.html</id>
+    <published>2018-08-13T12:29:38.000Z</published>
+    <updated>2019-03-02T10:48:05.473Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>在图片上右键上传，自动生成<code>图片URL</code>到剪切板中，任意地方<code>Ctrl+v</code>均可粘贴</p><p>在文件上右键上传，自动生成<code>图片URL</code>到剪切板中，任意地方<code>Ctrl+v</code>均可粘贴</p></blockquote><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="COS"><a href="#COS" class="headerlink" title="COS"></a>COS</h3><blockquote><p>对象存储（Cloud Object Storage，COS）</p></blockquote><p>我们需要一个空间，用于存放图片或者文件，这里推荐使用腾讯云或者七牛云</p><p>他们提供的免费额度足够普通用户使用了</p><p>腾讯云的免费额度</p><table><thead><tr><th>资源类型</th><th>资源子类型</th><th>每月免费额度</th></tr></thead><tbody><tr><td>存储空间</td><td>存储空间</td><td>50 GB</td></tr><tr><td>流量</td><td>外网下行流量</td><td>10 GB</td></tr><tr><td>流量</td><td>腾讯云 CDN 回源流量</td><td>10 GB</td></tr><tr><td>请求</td><td>读请求</td><td>100 万次</td></tr><tr><td>请求</td><td>写请求</td><td>100 万次</td></tr></tbody></table><h3 id="本地环境"><a href="#本地环境" class="headerlink" title="本地环境"></a>本地环境</h3><p>这里以腾讯云接口为例，本地需要<code>nodejs</code>运行环境</p><ul><li><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">nodejs</a></p></li><li><p><a href="https://github.com/tencentyun/cos-nodejs-sdk-v5" target="_blank" rel="noopener">腾讯云SDK</a></p><h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在windows环境变量中增加一项NODE_PATH</span><br><span class="line">最好同时指向2处，</span><br><span class="line">例如：</span><br><span class="line">C:\Users\ZNMLR\node_modules</span><br><span class="line">lC:\Users\ZNMLR\AppData\Roaming\npm\node_modules</span><br><span class="line">最少指向一处前者对应npm的本地安装，后者对应npm的全局安装</span><br></pre></td></tr></table></figure></li></ul><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h2 id="bat-js"><a href="#bat-js" class="headerlink" title="bat+js"></a>bat+js</h2><p>打开注册表编辑器</p><p><code>WIN+R</code>调用运行库，输入<code>regedit</code>，会打开注册表编辑器</p><p><img src="https://huanfan-1252958858.cos.ap-shanghai.myqcloud.com/2018/07/QQ%E5%9B%BE%E7%89%8720180730193456.png" alt=""></p><p>找到<code>计算机\HKEY_CLASSES_ROOT\*\shell</code></p><p><img src="https://huanfan-1252958858.cos.ap-shanghai.myqcloud.com/2018/07/QQ%E5%9B%BE%E7%89%8720180730193652.png" alt=""></p><ul><li>新建项<code>上传腾讯云</code>，在此项下再次新建项<code>command</code>，并修改右侧默认值 <code>cmd.exe /K &quot;C:\yunCos\1.bat &quot;%1&quot;&quot;</code></li></ul><p><img src="https://huanfan-1252958858.cos.ap-shanghai.myqcloud.com/2018/07/QQ%E5%9B%BE%E7%89%8720180730194044.png" alt=""></p><p>在C盘根目录建文件夹：yunCos，新建1.bat,内容如下</p><ul><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">node C:\yunCos\yunCos.js %1%</span><br><span class="line">exit</span><br></pre></td></tr></table></figure></li><li><p>新建   yunCos.js文件，内容暂空</p></li></ul><h2 id="安装腾讯云SDK"><a href="#安装腾讯云SDK" class="headerlink" title="安装腾讯云SDK"></a>安装腾讯云SDK</h2><ul><li><p>安装运行环境 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a></p><p>这个没什么好说的，双击下一步就好了</p></li><li><p>安装sdk</p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i cos-nodejs-sdk-v5 --save -g</span><br></pre></td></tr></table></figure><ul><li>再次安装SDK</li></ul><blockquote><p>不要问我为何有这一步，腾讯云文档这样写的  </p><p>先下载<a href="https://github.com/tencentyun/cos-nodejs-sdk-v5" target="_blank" rel="noopener">腾讯云SDK</a>，解压，进入到解压后的目录里执行命令</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\cos-nodejs-sdk-v5-master&gt;npm install -g</span><br></pre></td></tr></table></figure><h2 id="获取腾讯云上传鉴权码"><a href="#获取腾讯云上传鉴权码" class="headerlink" title="获取腾讯云上传鉴权码"></a>获取腾讯云上传鉴权码</h2><ul><li><p>请到<a href="https://cloud.tencent.com/product/cos" target="_blank" rel="noopener">腾讯云</a>注册账号并实名认证，</p></li><li><p>新建存储桶</p></li><li><p>获取APPID、SecretId、SecretKey、存储桶名称、所属地域 </p><p>以上步骤请自行阅读腾讯云文档，这里不做说明</p></li></ul><h2 id="编写上传脚本"><a href="#编写上传脚本" class="headerlink" title="编写上传脚本"></a>编写上传脚本</h2><h3 id="官方示例"><a href="#官方示例" class="headerlink" title="官方示例"></a>官方示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 引入模块</span><br><span class="line">var COS = require(&apos;cos-nodejs-sdk-v5&apos;);</span><br><span class="line">// 创建实例</span><br><span class="line">var cos = new COS(&#123;</span><br><span class="line">    AppId: &apos;1250000000&apos;,   // 修改为自己的appid</span><br><span class="line">    SecretId: &apos;AKIDxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&apos;, // 修改为自己的SecretId</span><br><span class="line">    SecretKey: &apos;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&apos;, // 修改为自己的SecretKey</span><br><span class="line">&#125;);</span><br><span class="line">// 分片上传</span><br><span class="line">cos.sliceUploadFile(&#123;</span><br><span class="line">    Bucket: &apos;test&apos;, // 修改为自己的存储桶名称，由英文、数字和标点符号组成</span><br><span class="line">    Region: &apos;ap-guangzhou&apos;, // 修改为自己的所属地域，应该是纯英文的部分</span><br><span class="line">    Key: &apos;1.zip&apos;, // 这个是远端的地址</span><br><span class="line">    FilePath: &apos;./1.zip&apos; // 这个是本地地址</span><br><span class="line">&#125;, function (err, data) &#123;</span><br><span class="line">    console.log(err, data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h3 id="修改后"><a href="#修改后" class="headerlink" title="修改后"></a>修改后</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">var picsuffix=new Array(&quot;.jpg&quot;, &quot;.png&quot;, &quot;.bmp&quot;, &quot;.jpeg&quot;);</span><br><span class="line">function contains(arr, obj) &#123;</span><br><span class="line">  var i = arr.length;</span><br><span class="line">  while (i--) &#123;</span><br><span class="line">    if (arr[i] === obj) &#123;</span><br><span class="line">      return true;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var filepath=process.argv.splice(2).toString();</span><br><span class="line">var filename = filepath.substring(filepath.lastIndexOf(&quot;\\&quot;)+1); </span><br><span class="line">var today = new Date();</span><br><span class="line">var year = today.getFullYear();</span><br><span class="line">var month = today.getMonth() + 1;</span><br><span class="line">var urlkey=year+&quot;/&quot;+(month&lt;10?&apos;0&apos;+month:month)+&quot;/&quot;+filename;</span><br><span class="line">var suffix=filename.substring(filename.lastIndexOf(&quot;.&quot;), filename.length);</span><br><span class="line"></span><br><span class="line">// 引入模块</span><br><span class="line">var COS = require(&apos;cos-nodejs-sdk-v5&apos;);</span><br><span class="line">// 创建实例</span><br><span class="line">var cos = new COS(&#123;</span><br><span class="line">    AppId: &apos;*&apos;, // 修改为自己的appid</span><br><span class="line">    SecretId: &apos;*&apos;,// 修改为自己的SecretId</span><br><span class="line">    SecretKey: &apos;*&apos;,// 修改为自己的SecretKey</span><br><span class="line">&#125;);</span><br><span class="line">// 分片上传</span><br><span class="line">cos.sliceUploadFile(&#123;</span><br><span class="line">    Bucket: &apos;*&apos;,// 修改为自己的存储桶名称，由英文、数字和标点符号组成</span><br><span class="line">    Region: &apos;ap-guangzhou&apos;,// 修改为自己的所属地域，应该是纯英文的部分</span><br><span class="line">    Key: urlkey,</span><br><span class="line">    FilePath: filepath</span><br><span class="line">&#125;, function (err, data) &#123;</span><br><span class="line">if(err)&#123;</span><br><span class="line">console.log(err);</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">console.log(data);</span><br><span class="line">const util = require(&apos;util&apos;);</span><br><span class="line">var url=&apos;&apos;;</span><br><span class="line">if (contains(picsuffix, suffix)) &#123;</span><br><span class="line">url=&apos;![](https://&apos;+data.Location+&apos;)&apos;;//这里返回的url是md格式，需要可自行更改</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line">url=&apos;[](https://&apos;+data.Location+&apos;)&apos;;//这里返回的url是md格式，需要可自行更改</span><br><span class="line">&#125;</span><br><span class="line">require(&apos;child_process&apos;).spawn(&apos;clip&apos;).stdin.end(url);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h2 id="关联bat与上传脚本"><a href="#关联bat与上传脚本" class="headerlink" title="关联bat与上传脚本"></a>关联bat与上传脚本</h2><blockquote><p>打开刚才建的yunCos.js，将上面内容复制进去，并修改相关内容，保存<br>在任意文件上点击右键，选择  上传腾讯云   会有脚本框一闪而过，找个文本框粘贴下，就得到你想要的URL</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;在图片上右键上传，自动生成&lt;code&gt;图片URL&lt;/code&gt;到剪切板中，任意地方&lt;code&gt;Ctrl+v&lt;/code&gt;均可粘贴&lt;/p&gt;
+&lt;p&gt;在文件上右键上传，自动生成&lt;code&gt;图片URL&lt;/code&gt;到剪切板中，任意地方&lt;code&gt;Ctrl+
+      
+    
+    </summary>
+    
+      <category term="hexo" scheme="https://hfanss.com/categories/hexo/"/>
+    
+    
+      <category term="腾讯云COS图床" scheme="https://hfanss.com/tags/%E8%85%BE%E8%AE%AF%E4%BA%91COS%E5%9B%BE%E5%BA%8A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>500小时学习计划</title>
     <link href="https://hfanss.com/2018/%E7%A0%81%E4%BA%91+hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E6%80%A7%E5%8D%9A%E5%AE%A2.html"/>
     <id>https://hfanss.com/2018/码云+hexo搭建个性博客.html</id>
@@ -300,33 +327,6 @@
       <category term="码云+hexo" scheme="https://hfanss.com/tags/%E7%A0%81%E4%BA%91-hexo/"/>
     
       <category term="gitee+hexo" scheme="https://hfanss.com/tags/gitee-hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>腾讯云COS图床制作</title>
-    <link href="https://hfanss.com/2018/%E8%85%BE%E8%AE%AF%E4%BA%91COS-%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E4%B8%8A%E4%BC%A0.html"/>
-    <id>https://hfanss.com/2018/腾讯云COS-本地图片上传.html</id>
-    <published>2018-08-13T12:29:38.000Z</published>
-    <updated>2019-03-02T10:48:05.473Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>在图片上右键上传，自动生成<code>图片URL</code>到剪切板中，任意地方<code>Ctrl+v</code>均可粘贴</p><p>在文件上右键上传，自动生成<code>图片URL</code>到剪切板中，任意地方<code>Ctrl+v</code>均可粘贴</p></blockquote><h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><h3 id="COS"><a href="#COS" class="headerlink" title="COS"></a>COS</h3><blockquote><p>对象存储（Cloud Object Storage，COS）</p></blockquote><p>我们需要一个空间，用于存放图片或者文件，这里推荐使用腾讯云或者七牛云</p><p>他们提供的免费额度足够普通用户使用了</p><p>腾讯云的免费额度</p><table><thead><tr><th>资源类型</th><th>资源子类型</th><th>每月免费额度</th></tr></thead><tbody><tr><td>存储空间</td><td>存储空间</td><td>50 GB</td></tr><tr><td>流量</td><td>外网下行流量</td><td>10 GB</td></tr><tr><td>流量</td><td>腾讯云 CDN 回源流量</td><td>10 GB</td></tr><tr><td>请求</td><td>读请求</td><td>100 万次</td></tr><tr><td>请求</td><td>写请求</td><td>100 万次</td></tr></tbody></table><h3 id="本地环境"><a href="#本地环境" class="headerlink" title="本地环境"></a>本地环境</h3><p>这里以腾讯云接口为例，本地需要<code>nodejs</code>运行环境</p><ul><li><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">nodejs</a></p></li><li><p><a href="https://github.com/tencentyun/cos-nodejs-sdk-v5" target="_blank" rel="noopener">腾讯云SDK</a></p><h3 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在windows环境变量中增加一项NODE_PATH</span><br><span class="line">最好同时指向2处，</span><br><span class="line">例如：</span><br><span class="line">C:\Users\ZNMLR\node_modules</span><br><span class="line">lC:\Users\ZNMLR\AppData\Roaming\npm\node_modules</span><br><span class="line">最少指向一处前者对应npm的本地安装，后者对应npm的全局安装</span><br></pre></td></tr></table></figure></li></ul><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h2 id="bat-js"><a href="#bat-js" class="headerlink" title="bat+js"></a>bat+js</h2><p>打开注册表编辑器</p><p><code>WIN+R</code>调用运行库，输入<code>regedit</code>，会打开注册表编辑器</p><p><img src="https://huanfan-1252958858.cos.ap-shanghai.myqcloud.com/2018/07/QQ%E5%9B%BE%E7%89%8720180730193456.png" alt=""></p><p>找到<code>计算机\HKEY_CLASSES_ROOT\*\shell</code></p><p><img src="https://huanfan-1252958858.cos.ap-shanghai.myqcloud.com/2018/07/QQ%E5%9B%BE%E7%89%8720180730193652.png" alt=""></p><ul><li>新建项<code>上传腾讯云</code>，在此项下再次新建项<code>command</code>，并修改右侧默认值 <code>cmd.exe /K &quot;C:\yunCos\1.bat &quot;%1&quot;&quot;</code></li></ul><p><img src="https://huanfan-1252958858.cos.ap-shanghai.myqcloud.com/2018/07/QQ%E5%9B%BE%E7%89%8720180730194044.png" alt=""></p><p>在C盘根目录建文件夹：yunCos，新建1.bat,内容如下</p><ul><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">node C:\yunCos\yunCos.js %1%</span><br><span class="line">exit</span><br></pre></td></tr></table></figure></li><li><p>新建   yunCos.js文件，内容暂空</p></li></ul><h2 id="安装腾讯云SDK"><a href="#安装腾讯云SDK" class="headerlink" title="安装腾讯云SDK"></a>安装腾讯云SDK</h2><ul><li><p>安装运行环境 <a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a></p><p>这个没什么好说的，双击下一步就好了</p></li><li><p>安装sdk</p></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i cos-nodejs-sdk-v5 --save -g</span><br></pre></td></tr></table></figure><ul><li>再次安装SDK</li></ul><blockquote><p>不要问我为何有这一步，腾讯云文档这样写的  </p><p>先下载<a href="https://github.com/tencentyun/cos-nodejs-sdk-v5" target="_blank" rel="noopener">腾讯云SDK</a>，解压，进入到解压后的目录里执行命令</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D:\cos-nodejs-sdk-v5-master&gt;npm install -g</span><br></pre></td></tr></table></figure><h2 id="获取腾讯云上传鉴权码"><a href="#获取腾讯云上传鉴权码" class="headerlink" title="获取腾讯云上传鉴权码"></a>获取腾讯云上传鉴权码</h2><ul><li><p>请到<a href="https://cloud.tencent.com/product/cos" target="_blank" rel="noopener">腾讯云</a>注册账号并实名认证，</p></li><li><p>新建存储桶</p></li><li><p>获取APPID、SecretId、SecretKey、存储桶名称、所属地域 </p><p>以上步骤请自行阅读腾讯云文档，这里不做说明</p></li></ul><h2 id="编写上传脚本"><a href="#编写上传脚本" class="headerlink" title="编写上传脚本"></a>编写上传脚本</h2><h3 id="官方示例"><a href="#官方示例" class="headerlink" title="官方示例"></a>官方示例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 引入模块</span><br><span class="line">var COS = require(&apos;cos-nodejs-sdk-v5&apos;);</span><br><span class="line">// 创建实例</span><br><span class="line">var cos = new COS(&#123;</span><br><span class="line">    AppId: &apos;1250000000&apos;,   // 修改为自己的appid</span><br><span class="line">    SecretId: &apos;AKIDxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&apos;, // 修改为自己的SecretId</span><br><span class="line">    SecretKey: &apos;xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&apos;, // 修改为自己的SecretKey</span><br><span class="line">&#125;);</span><br><span class="line">// 分片上传</span><br><span class="line">cos.sliceUploadFile(&#123;</span><br><span class="line">    Bucket: &apos;test&apos;, // 修改为自己的存储桶名称，由英文、数字和标点符号组成</span><br><span class="line">    Region: &apos;ap-guangzhou&apos;, // 修改为自己的所属地域，应该是纯英文的部分</span><br><span class="line">    Key: &apos;1.zip&apos;, // 这个是远端的地址</span><br><span class="line">    FilePath: &apos;./1.zip&apos; // 这个是本地地址</span><br><span class="line">&#125;, function (err, data) &#123;</span><br><span class="line">    console.log(err, data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h3 id="修改后"><a href="#修改后" class="headerlink" title="修改后"></a>修改后</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">var picsuffix=new Array(&quot;.jpg&quot;, &quot;.png&quot;, &quot;.bmp&quot;, &quot;.jpeg&quot;);</span><br><span class="line">function contains(arr, obj) &#123;</span><br><span class="line">  var i = arr.length;</span><br><span class="line">  while (i--) &#123;</span><br><span class="line">    if (arr[i] === obj) &#123;</span><br><span class="line">      return true;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  return false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var filepath=process.argv.splice(2).toString();</span><br><span class="line">var filename = filepath.substring(filepath.lastIndexOf(&quot;\\&quot;)+1); </span><br><span class="line">var today = new Date();</span><br><span class="line">var year = today.getFullYear();</span><br><span class="line">var month = today.getMonth() + 1;</span><br><span class="line">var urlkey=year+&quot;/&quot;+(month&lt;10?&apos;0&apos;+month:month)+&quot;/&quot;+filename;</span><br><span class="line">var suffix=filename.substring(filename.lastIndexOf(&quot;.&quot;), filename.length);</span><br><span class="line"></span><br><span class="line">// 引入模块</span><br><span class="line">var COS = require(&apos;cos-nodejs-sdk-v5&apos;);</span><br><span class="line">// 创建实例</span><br><span class="line">var cos = new COS(&#123;</span><br><span class="line">    AppId: &apos;*&apos;, // 修改为自己的appid</span><br><span class="line">    SecretId: &apos;*&apos;,// 修改为自己的SecretId</span><br><span class="line">    SecretKey: &apos;*&apos;,// 修改为自己的SecretKey</span><br><span class="line">&#125;);</span><br><span class="line">// 分片上传</span><br><span class="line">cos.sliceUploadFile(&#123;</span><br><span class="line">    Bucket: &apos;*&apos;,// 修改为自己的存储桶名称，由英文、数字和标点符号组成</span><br><span class="line">    Region: &apos;ap-guangzhou&apos;,// 修改为自己的所属地域，应该是纯英文的部分</span><br><span class="line">    Key: urlkey,</span><br><span class="line">    FilePath: filepath</span><br><span class="line">&#125;, function (err, data) &#123;</span><br><span class="line">if(err)&#123;</span><br><span class="line">console.log(err);</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">console.log(data);</span><br><span class="line">const util = require(&apos;util&apos;);</span><br><span class="line">var url=&apos;&apos;;</span><br><span class="line">if (contains(picsuffix, suffix)) &#123;</span><br><span class="line">url=&apos;![](https://&apos;+data.Location+&apos;)&apos;;//这里返回的url是md格式，需要可自行更改</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line">url=&apos;[](https://&apos;+data.Location+&apos;)&apos;;//这里返回的url是md格式，需要可自行更改</span><br><span class="line">&#125;</span><br><span class="line">require(&apos;child_process&apos;).spawn(&apos;clip&apos;).stdin.end(url);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure><h2 id="关联bat与上传脚本"><a href="#关联bat与上传脚本" class="headerlink" title="关联bat与上传脚本"></a>关联bat与上传脚本</h2><blockquote><p>打开刚才建的yunCos.js，将上面内容复制进去，并修改相关内容，保存<br>在任意文件上点击右键，选择  上传腾讯云   会有脚本框一闪而过，找个文本框粘贴下，就得到你想要的URL</p></blockquote>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;在图片上右键上传，自动生成&lt;code&gt;图片URL&lt;/code&gt;到剪切板中，任意地方&lt;code&gt;Ctrl+v&lt;/code&gt;均可粘贴&lt;/p&gt;
-&lt;p&gt;在文件上右键上传，自动生成&lt;code&gt;图片URL&lt;/code&gt;到剪切板中，任意地方&lt;code&gt;Ctrl+
-      
-    
-    </summary>
-    
-      <category term="hexo" scheme="https://hfanss.com/categories/hexo/"/>
-    
-    
-      <category term="腾讯云COS图床" scheme="https://hfanss.com/tags/%E8%85%BE%E8%AE%AF%E4%BA%91COS%E5%9B%BE%E5%BA%8A/"/>
     
   </entry>
   
