@@ -1972,10 +1972,8 @@ ul.h-list > li {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   padding-top: 10px;
-  padding-bottom: 5px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 15px;
 }
 .m_widget.author .avatar-f {
   color: #999;
@@ -1993,6 +1991,12 @@ ul.h-list > li {
   padding: 9px 0 11px 0;
   display: block;
   cursor: pointer;
+}
+.m_widget.author .avatar-ff a:hover {
+  color: #0099FF;
+}
+.m_widget.author .ffff:hover {
+  color: #0099FF;
 }
 .m_widget.author .lrborder {
   border-right: 1px solid #ddd;
