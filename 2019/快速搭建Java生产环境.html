@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>留言板-幻凡ss
+  <title>快速搭建Java生产环境-幻凡ss
   </title>
   <meta name="description" content="专注Java • 分享生活 • 记录人生">
   
@@ -157,32 +157,145 @@
     <div>
     <div class="container clearfix">
         <div class="l_main">
-      <article id="page-" class="post white-box article-type-page" itemscope="" itemprop="blogPost">
+      <article id="post-快速搭建Java生产环境" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
     <section class="meta">
 
         <h1 class="title">
-            <center></center>
+            <center>快速搭建Java生产环境</center>
         </h1>
 
 
+ <center>
+    <time>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+    <span>发表于 </span>2019-03-10-星期日&nbsp;&nbsp;|&nbsp;&nbsp;
+    <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;
+    阅读 &nbsp;(
+    <span id="busuanzi_value_page_pv">计算中...</span>&nbsp;)
+    
+    </time>
+</center>
 
+
+
+    <hr class="zdyhr">
        
     </section>
 
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="留言板"><a href="#留言板" class="headerlink" title="留言板"></a>留言板</h1><div style="text-align: center"><br>未来不迎 过往不恋<br>不忘初心 方得始终<br></div>
+            <p>（本文使用于有一定基础的编程人员，如果小白的话请仔细，一步一步按照本文来 也可配置成功，有问题可在下方评论）</p>
+<h2 id="1-JDK"><a href="#1-JDK" class="headerlink" title="1. JDK"></a>1. JDK</h2><p>看好自己电脑的版本  X32/X64，然后下载一个版本。并不是越新越好，一般都是1.5、1.7</p>
+<p>官网 <a href="http://www.oracle.com/technetwork/java/index.html，官网有时候会卡" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/index.html，官网有时候会卡</a></p>
+<p>我在自己的网盘里分享了，<a href="https://pan.baidu.com/s/1mjmDTOW" target="_blank" rel="noopener">https://pan.baidu.com/s/1mjmDTOW</a></p>
+<p><img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194407361.jpg" alt=""></p>
+<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><p>安装很简单，按照步骤一步一步来就好了，</p>
+<p> <img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194430668.jpg" alt=""></p>
+<p>这里可以更改安装路径，需要的可以自己改</p>
+<p> <img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194443621.jpg" alt=""></p>
+<p>这一步是安装JRE，JDK中是包含JRE的，所以可安装也可不安装</p>
+<p> <img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194457102.jpg" alt=""></p>
+<h3 id="环境变量："><a href="#环境变量：" class="headerlink" title="环境变量："></a>环境变量：</h3><p>右击我的电脑——&gt;属性——&gt;高级——&gt;环境变量——&gt;在系统变量中找到path.</p>
+<p>点击新建——&gt;变量名：JAVA_HOME，变量值：你的java所在路径，如这是我的安装路径：E:\Java\jdk1.7.0_21，这个值只要到这目录就差不多了，不要在后面加\bin等东西了。</p>
+<p>双击path——&gt;在最前面加这么个东西   %JAVA_HOME%\bin;   分号不能少，必须是英文的分号。</p>
+<p><img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194517051.jpg" alt=""><img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194523480.jpg" alt=""></p>
+<p><img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194532253.jpg" alt=""></p>
+<p><img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194539436.jpg" alt=""></p>
+<p>如果还有不清楚的，请去我的网盘下载  详细文档，里面有非常详细的说明</p>
+<p> <img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194604222.jpg" alt=""></p>
+<p>校验环境变量是否成功</p>
+<p>快捷键win+R——&gt;输入cmd——&gt;输java</p>
+<p> <img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194619335.jpg" alt=""></p>
+<p>出现下图内容证明 成功</p>
+<p> <img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194629994.jpg" alt=""></p>
+<h2 id="2-Tomcat"><a href="#2-Tomcat" class="headerlink" title="2. Tomcat"></a>2. Tomcat</h2><p>网盘:<a href="https://pan.baidu.com/s/1jKciScA" target="_blank" rel="noopener">https://pan.baidu.com/s/1jKciScA</a></p>
+<p>这个有点简单，全部点下一步就行，环境变量可配可不配</p>
+<p>配的话 接上面 JDK的环境变量配置方法，名字为CATALINA_HOME，</p>
+<p> <img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194645555.jpg" alt=""></p>
+<p>跟上面一样的方法添加到 Path中,他这个配环境变量的目的其实是可以单独启动，我们只需要在工具中启动就可以了，所以可不安装</p>
+<h2 id="3-Eclipse"><a href="#3-Eclipse" class="headerlink" title="3. Eclipse"></a>3. Eclipse</h2><p>官网地址<a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener">https://www.eclipse.org/downloads/</a></p>
+<p>相关使用及配置  详见我另一篇博客<a href="http://blog.csdn.net/q2158798/article/details/77184898里面有JDK,Tomcat在Eclipse里的相关配置" target="_blank" rel="noopener">http://blog.csdn.net/q2158798/article/details/77184898里面有JDK,Tomcat在Eclipse里的相关配置</a></p>
+<h2 id="4-Svn"><a href="#4-Svn" class="headerlink" title="4. Svn"></a>4. Svn</h2><p>这里提供一个在线安装的</p>
+<p>Eclipse里 点击 help-install from site -出来界面后，点击右边  add,</p>
+<p>Name:svn</p>
+<p>Location：<a href="http://subclipse.tigris.org/update_1.10.x" target="_blank" rel="noopener">http://subclipse.tigris.org/update_1.10.x</a></p>
+<p> <img src="https://blog-1252958858.file.myqcloud.com/2019/03/20180115194706418.jpg" alt=""></p>
+<p>全部选上，点击下方Finish开始下载，东西不大，但服务器在国外，网速不好可能会卡</p>
+<p>SVN导出项目报错的话  可以参考我的另一篇文章</p>
+<p><a href="http://blog.csdn.net/q2158798/article/details/74612930" target="_blank" rel="noopener">http://blog.csdn.net/q2158798/article/details/74612930</a></p>
+<h2 id="5-反编译工具"><a href="#5-反编译工具" class="headerlink" title="5. 反编译工具"></a>5. 反编译工具</h2><p><a href="https://pan.baidu.com/s/1dL4mKY" target="_blank" rel="noopener">https://pan.baidu.com/s/1dL4mKY</a></p>
+<p>非常小巧的一个工具，直接把jar包往里面拖就能看到了</p>
+<h2 id="6-数据库方面"><a href="#6-数据库方面" class="headerlink" title="6. 数据库方面"></a>6. 数据库方面</h2><p>推荐使用Navicat，可以链接多个数据库，下载地址:<a href="http://www.cr173.com/soft/126934.html" target="_blank" rel="noopener">http://www.cr173.com/soft/126934.html</a></p>
+<p>用此工具链接 Oracle的方法  参考我的另一篇文章</p>
+<p><a href="http://blog.csdn.net/q2158798/article/details/78487405" target="_blank" rel="noopener">http://blog.csdn.net/q2158798/article/details/78487405</a></p>
         </div>
         <br><br>
 
+<div title="未经允许不得转载" class="post-copyright">未经允许不得转载： 幻凡ss » <span style="color: #ce8134">快速搭建Java生产环境</span></div>
+
+
+
+ 
+<div class="share">
+<span style="vertical-align: text-bottom;font-size:14px">分享到：</span>
+<a title="分享到微博" href="javascript:" onclick="window.open('http://service.weibo.com/share/share.php?url=https://hfanss.com/2019/快速搭建Java生产环境.html&sharesource=weibo&title=【快速搭建Java生产环境 - 幻凡ss】 本文指导开发者如何快速搭建一个Java生产环境，适用于windows系统下的使用...&pic=https://blog-1252958858.file.myqcloud.com/2019/03/timg.jpg&appkey=2706825840','','height=400,width=711,left=100,right=100,scrollbars=yes,status=yes')">
+
+<span class="iconfont icon-weibo"></span>
+
+<a title="分享到QQ空间" href="javascript:" onclick="window.open('https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://hfanss.com/2019/快速搭建Java生产环境.html&sharesource=qzone&title=【快速搭建Java生产环境 - 幻凡ss】&pics=https://blog-1252958858.file.myqcloud.com/2019/03/timg.jpg&summary=本文指导开发者如何快速搭建一个Java生产环境，适用于windows系统下的使用...','','height=598,width=711,scrollbars=yes,status=yes')">
+
+<span class="iconfont icon-qqkongjian"></span>
+
+<a title="分享到QQ好友" href="javascript:" onclick="window.open('http://connect.qq.com/widget/shareqq/index.html?url=https://hfanss.com/2019/快速搭建Java生产环境.html&title=【快速搭建Java生产环境 - 幻凡ss】&pics=https://blog-1252958858.file.myqcloud.com/2019/03/timg.jpg&summary=幻凡ss&desc=','','height=598,width=711,scrollbars=yes,status=yes')">
+
+<span class="iconfont icon-QQ"></span>
+
+</a></a></a></div>
 
 
 
        
+            <div class="article-tags tags">
+                
+                   <a href="/tags/Java生产环境/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Java生产环境</a>
+                
+            </div>
+        
 
         
-    </section>
+            <div class="prev-next">
+                
+                    <section class="prev">
+                        <span class="art-item-left">
+                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
+                            <h4>
+                                <a href="/2019/在页面标签内实现随机颜色.html" rel="prev" title="在页面标签内实现随机颜色">
+                                  
+                                      在页面标签内实现随机颜色
+                                  
+                                </a>
+                            </h4>
+                    </span></section>
+                    
+                    <div class="fenge">
+                    </div>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/对list中对象的某一属性排序.html" rel="next" title="对list中对象的某一属性排序">
+                                    
+                                        对list中对象的某一属性排序
+                                    
+                                </a>
+                            </h4>
+                        </span></section></div>
+                    </section>
+                        
+            
+    
 
 </article>
 
@@ -192,6 +305,23 @@
 
     <article class="post white-box comments">
         <section class="article typo">
+            
+                <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;文章推荐</h4>
+        <ul>
+            
+                <li><a href="https://hfanss.com/2019/在页面标签内实现随机颜色.html">在页面标签内实现随机颜色</a></li>
+            
+                <li><a href="https://hfanss.com/2019/对list中对象的某一属性排序.html">对list中对象的某一属性排序</a></li>
+            
+                <li><a href="https://hfanss.com/2019/Tomcat配置ssl证书.html">Tomcat配置ssl证书</a></li>
+            
+                <li><a href="https://hfanss.com/2019/2019比挣钱更重要的是活着.html">2019比挣钱更重要的是活着</a></li>
+            
+                <li><a href="https://hfanss.com/2018/用Java做一个简单的打字游戏.html">用Java做一个简单的打字游戏</a></li>
+            
+        </ul>
+    </div>
             
 
             
@@ -220,7 +350,7 @@
 
 <script>
     window.subData = {
-        title: '',
+        title: '快速搭建Java生产环境',
         tools: true
     }
 </script>
@@ -301,7 +431,14 @@
     
 
     
-        
+        <section class="m_widget toc-wrapper">
+        <div class="celan-title"><div class="celan-title-i"><i style="color:#0099FF" class="fa fa-list-ul"></i></div>目录</div>
+<!--             <div class='wrapper'><a style="margin-right: 30px;" class="s-toc rightBtn" title="固定到顶部"
+             rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fa fa-thumbtack fa-fw"></i></a></div> -->
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-JDK"><span class="toc-text">1. JDK</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装："><span class="toc-text">安装：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境变量："><span class="toc-text">环境变量：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Tomcat"><span class="toc-text">2. Tomcat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Eclipse"><span class="toc-text">3. Eclipse</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-Svn"><span class="toc-text">4. Svn</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-反编译工具"><span class="toc-text">5. 反编译工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-数据库方面"><span class="toc-text">6. 数据库方面</span></a></li></ol>
+        </div>
+    </section>
     
 
     
@@ -365,53 +502,6 @@
         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="450" src="//music.163.com/outchain/player?type=0&id=2270688529&auto=0&height=450"></iframe>
     </div>
 </section>
-    
-
-    
-        <section id="fixPara" class="m_widget links">
-    <div class="celan-title"><div class="celan-title-i"><i style="color:#0099FF" class="fa fa-star fa-fw"></i></div>热门推荐</div>
-    <div class="content">
-        <ul class="entry" id="links">
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/Maupassant主题、屠城主题优化版.html">
-                    <div class="name">
-                        
-                            <img src="/img/hotrec-1.png">
-                        
-                        &nbsp;&nbsp;Maupassant主题优化、屠城hexo主题优化版
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/腾讯云COS图床制作.html">
-                    <div class="name">
-                        
-                            <img src="/img/hotrec-2.png">
-                        
-                        &nbsp;&nbsp;腾讯云COS图床制作
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/码云+hexo搭建个性博客.html">
-                    <div class="name">
-                        
-                            <img src="/img/hotrec-3.png">
-                        
-                        &nbsp;&nbsp;码云+hexo搭建个性博客
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/hexo博客常用插件及教程.html">
-                    <div class="name">
-                        
-                            <img src="/img/hotrec-all.png">
-                        
-                        &nbsp;&nbsp;hexo博客常用插件及教程
-                    </div>
-                </a></li>
-            
-        </ul>
-    <br>
-</div></section>
         </aside>
     </div>
     </div>
@@ -552,27 +642,34 @@ function show_runtime(){
 </script>
 
 
+
+
+
 <script type="text/javascript">
-  var url = window.location.href;
-  window.onload=
-    function(){
-        var oDiv = document.getElementById("fixPara"),
-            H = 0,
-            Y = oDiv        
-        while (Y) {
-            H += Y.offsetTop; 
-            Y = Y.offsetParent;
-        }
-        window.onscroll = function()
-        {
-            var s = document.body.scrollTop || document.documentElement.scrollTop;
-            if(s>H) {
-                oDiv.style = "position:fixed;top:60px;"
-            } else {
-                oDiv.style = ""
-        }
-    }
+function over(){
+  var div = document.getElementById('article-cpoyright');
+  var text = document.getElementById('c-text');
+  text.style.display="block";
+
 }
+function out(){
+  var div = document.getElementById('article-cpoyright');
+  var text = document.getElementById('c-text');
+  text.style.display="none";
+}
+</script>
+
+<script type="text/javascript">
+function copyArticle(event) {
+  const range = document.createRange();
+  range.selectNode(document.getElementById('copyLink'));
+
+  const selection = window.getSelection();
+  if(selection.rangeCount > 0) selection.removeAllRanges();
+  selection.addRange(range);
+  document.execCommand('copy');
+}
+document.getElementById('copyBT').addEventListener('click', copyArticle, false);
 </script>
 
 

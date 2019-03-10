@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>留言板-幻凡ss
+  <title>在页面标签内实现随机颜色-幻凡ss
   </title>
   <meta name="description" content="专注Java • 分享生活 • 记录人生">
   
@@ -157,32 +157,93 @@
     <div>
     <div class="container clearfix">
         <div class="l_main">
-      <article id="page-" class="post white-box article-type-page" itemscope="" itemprop="blogPost">
+      <article id="post-在页面标签内实现随机颜色" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
     <section class="meta">
 
         <h1 class="title">
-            <center></center>
+            <center>在页面标签内实现随机颜色</center>
         </h1>
 
 
+ <center>
+    <time>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
+    <span>发表于 </span>2019-03-10-星期日&nbsp;&nbsp;|&nbsp;&nbsp;
+    <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;
+    阅读 &nbsp;(
+    <span id="busuanzi_value_page_pv">计算中...</span>&nbsp;)
+    
+    </time>
+</center>
 
+
+
+    <hr class="zdyhr">
        
     </section>
 
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <h1 id="留言板"><a href="#留言板" class="headerlink" title="留言板"></a>留言板</h1><div style="text-align: center"><br>未来不迎 过往不恋<br>不忘初心 方得始终<br></div>
+            <h3 id="条件"><a href="#条件" class="headerlink" title="条件"></a>条件</h3><p>jstl,有一个数字返回值</p>
+<h3 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h3><p>将这个数字对某个数字取余，然后设定颜色。</p>
+<h3 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;tagcloud&quot;&gt;</span><br><span class="line">            &lt;c:forEach items=&quot;$&#123;tagList&#125;&quot; var=&quot;tag&quot;&gt;</span><br><span class="line">                &lt;c:if test=&quot;$&#123;tag.tagId%5==0&#125;&quot;&gt;</span><br><span class="line">	                &lt;a href=&quot;/tag/$&#123;tag.tagId&#125;&quot;</span><br><span class="line">	                   class=&quot;tag-link-129 tag-link-position-1&quot; title=&quot;$&#123;tag.articleCount&#125;个话题&quot;</span><br><span class="line">	                   style=&quot;font-size: 14px;color:#BF3EFF&quot;&gt;</span><br><span class="line">	                        $&#123;tag.tagName&#125;</span><br><span class="line">	                &lt;/a&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line">                &lt;c:if test=&quot;$&#123;tag.tagId%5==1&#125;&quot;&gt;</span><br><span class="line">	                &lt;a href=&quot;/tag/$&#123;tag.tagId&#125;&quot;</span><br><span class="line">	                   class=&quot;tag-link-129 tag-link-position-1&quot; title=&quot;$&#123;tag.articleCount&#125;个话题&quot;</span><br><span class="line">	                   style=&quot;font-size: 14px;color:#B0E2FF&quot;&gt;</span><br><span class="line">	                        $&#123;tag.tagName&#125;</span><br><span class="line">	                &lt;/a&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line">                &lt;c:if test=&quot;$&#123;tag.tagId%5==2&#125;&quot;&gt;</span><br><span class="line">	                &lt;a href=&quot;/tag/$&#123;tag.tagId&#125;&quot;</span><br><span class="line">	                   class=&quot;tag-link-129 tag-link-position-1&quot; title=&quot;$&#123;tag.articleCount&#125;个话题&quot;</span><br><span class="line">	                   style=&quot;font-size: 14px;color:#F08080&quot;&gt;</span><br><span class="line">	                        $&#123;tag.tagName&#125;</span><br><span class="line">	                &lt;/a&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line">                &lt;c:if test=&quot;$&#123;tag.tagId%5==3&#125;&quot;&gt;</span><br><span class="line">	                &lt;a href=&quot;/tag/$&#123;tag.tagId&#125;&quot;</span><br><span class="line">	                   class=&quot;tag-link-129 tag-link-position-1&quot; title=&quot;$&#123;tag.articleCount&#125;个话题&quot;</span><br><span class="line">	                   style=&quot;font-size: 14px;color:#CD9B1D&quot;&gt;</span><br><span class="line">	                        $&#123;tag.tagName&#125;</span><br><span class="line">	                &lt;/a&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line">                &lt;c:if test=&quot;$&#123;tag.tagId%5==4&#125;&quot;&gt;</span><br><span class="line">	                &lt;a href=&quot;/tag/$&#123;tag.tagId&#125;&quot;</span><br><span class="line">	                   class=&quot;tag-link-129 tag-link-position-1&quot; title=&quot;$&#123;tag.articleCount&#125;个话题&quot;</span><br><span class="line">	                   style=&quot;font-size: 14px;color:#00C5CD&quot;&gt;</span><br><span class="line">	                        $&#123;tag.tagName&#125;</span><br><span class="line">	                &lt;/a&gt;</span><br><span class="line">                &lt;/c:if&gt;</span><br><span class="line">                </span><br><span class="line">            &lt;/c:forEach&gt;</span><br><span class="line">            &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>不想用JS写，在标签内只能用这种取巧的方法</p>
         </div>
         <br><br>
 
+<div title="未经允许不得转载" class="post-copyright">未经允许不得转载： 幻凡ss » <span style="color: #ce8134">在页面标签内实现随机颜色</span></div>
+
+
+
+ 
+<div class="share">
+<span style="vertical-align: text-bottom;font-size:14px">分享到：</span>
+<a title="分享到微博" href="javascript:" onclick="window.open('http://service.weibo.com/share/share.php?url=https://hfanss.com/2019/在页面标签内实现随机颜色.html&sharesource=weibo&title=【在页面标签内实现随机颜色 - 幻凡ss】 使用非js的方法实现页面元素的随机颜色实现，需要页面使用JSTL，不用js的话只能使用这种取巧的方法...&pic=https://blog-1252958858.file.myqcloud.com/2019/03/timg11.jpg&appkey=2706825840','','height=400,width=711,left=100,right=100,scrollbars=yes,status=yes')">
+
+<span class="iconfont icon-weibo"></span>
+
+<a title="分享到QQ空间" href="javascript:" onclick="window.open('https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://hfanss.com/2019/在页面标签内实现随机颜色.html&sharesource=qzone&title=【在页面标签内实现随机颜色 - 幻凡ss】&pics=https://blog-1252958858.file.myqcloud.com/2019/03/timg11.jpg&summary=使用非js的方法实现页面元素的随机颜色实现，需要页面使用JSTL，不用js的话只能使用这种取巧的方法...','','height=598,width=711,scrollbars=yes,status=yes')">
+
+<span class="iconfont icon-qqkongjian"></span>
+
+<a title="分享到QQ好友" href="javascript:" onclick="window.open('http://connect.qq.com/widget/shareqq/index.html?url=https://hfanss.com/2019/在页面标签内实现随机颜色.html&title=【在页面标签内实现随机颜色 - 幻凡ss】&pics=https://blog-1252958858.file.myqcloud.com/2019/03/timg11.jpg&summary=幻凡ss&desc=','','height=598,width=711,scrollbars=yes,status=yes')">
+
+<span class="iconfont icon-QQ"></span>
+
+</a></a></a></div>
 
 
 
        
+            <div class="article-tags tags">
+                
+                   <a href="/tags/随机颜色/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;随机颜色</a>
+                
+            </div>
+        
 
         
-    </section>
+            <div class="prev-next">
+                
+                    <div class="fenge">
+                    </div>
+                
+                    <section class="next">
+                        <span class="art-item-right" aria-hidden="true">
+                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
+                            <h4>
+                                <a href="/2019/快速搭建Java生产环境.html" rel="next" title="快速搭建Java生产环境">
+                                    
+                                        快速搭建Java生产环境
+                                    
+                                </a>
+                            </h4>
+                        </span></section></div>
+                    </section>
+                        
+            
+    
 
 </article>
 
@@ -192,6 +253,23 @@
 
     <article class="post white-box comments">
         <section class="article typo">
+            
+                <div class="recommended_posts">
+        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;文章推荐</h4>
+        <ul>
+            
+                <li><a href="https://hfanss.com/2019/快速搭建Java生产环境.html">快速搭建Java生产环境</a></li>
+            
+                <li><a href="https://hfanss.com/2019/对list中对象的某一属性排序.html">对list中对象的某一属性排序</a></li>
+            
+                <li><a href="https://hfanss.com/2019/Tomcat配置ssl证书.html">Tomcat配置ssl证书</a></li>
+            
+                <li><a href="https://hfanss.com/2019/2019比挣钱更重要的是活着.html">2019比挣钱更重要的是活着</a></li>
+            
+                <li><a href="https://hfanss.com/2018/用Java做一个简单的打字游戏.html">用Java做一个简单的打字游戏</a></li>
+            
+        </ul>
+    </div>
             
 
             
@@ -220,7 +298,7 @@
 
 <script>
     window.subData = {
-        title: '',
+        title: '在页面标签内实现随机颜色',
         tools: true
     }
 </script>
@@ -301,7 +379,14 @@
     
 
     
-        
+        <section class="m_widget toc-wrapper">
+        <div class="celan-title"><div class="celan-title-i"><i style="color:#0099FF" class="fa fa-list-ul"></i></div>目录</div>
+<!--             <div class='wrapper'><a style="margin-right: 30px;" class="s-toc rightBtn" title="固定到顶部"
+             rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fa fa-thumbtack fa-fw"></i></a></div> -->
+        <div class="content">
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#条件"><span class="toc-text">条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#原理："><span class="toc-text">原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#例子："><span class="toc-text">例子：</span></a></li></ol>
+        </div>
+    </section>
     
 
     
@@ -365,53 +450,6 @@
         <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height="450" src="//music.163.com/outchain/player?type=0&id=2270688529&auto=0&height=450"></iframe>
     </div>
 </section>
-    
-
-    
-        <section id="fixPara" class="m_widget links">
-    <div class="celan-title"><div class="celan-title-i"><i style="color:#0099FF" class="fa fa-star fa-fw"></i></div>热门推荐</div>
-    <div class="content">
-        <ul class="entry" id="links">
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/Maupassant主题、屠城主题优化版.html">
-                    <div class="name">
-                        
-                            <img src="/img/hotrec-1.png">
-                        
-                        &nbsp;&nbsp;Maupassant主题优化、屠城hexo主题优化版
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/腾讯云COS图床制作.html">
-                    <div class="name">
-                        
-                            <img src="/img/hotrec-2.png">
-                        
-                        &nbsp;&nbsp;腾讯云COS图床制作
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/码云+hexo搭建个性博客.html">
-                    <div class="name">
-                        
-                            <img src="/img/hotrec-3.png">
-                        
-                        &nbsp;&nbsp;码云+hexo搭建个性博客
-                    </div>
-                </a></li>
-            
-                <li><a class="flat-box" target="_blank" rel="external nofollow noopener noreferrer" href="/2018/hexo博客常用插件及教程.html">
-                    <div class="name">
-                        
-                            <img src="/img/hotrec-all.png">
-                        
-                        &nbsp;&nbsp;hexo博客常用插件及教程
-                    </div>
-                </a></li>
-            
-        </ul>
-    <br>
-</div></section>
         </aside>
     </div>
     </div>
@@ -552,27 +590,34 @@ function show_runtime(){
 </script>
 
 
+
+
+
 <script type="text/javascript">
-  var url = window.location.href;
-  window.onload=
-    function(){
-        var oDiv = document.getElementById("fixPara"),
-            H = 0,
-            Y = oDiv        
-        while (Y) {
-            H += Y.offsetTop; 
-            Y = Y.offsetParent;
-        }
-        window.onscroll = function()
-        {
-            var s = document.body.scrollTop || document.documentElement.scrollTop;
-            if(s>H) {
-                oDiv.style = "position:fixed;top:60px;"
-            } else {
-                oDiv.style = ""
-        }
-    }
+function over(){
+  var div = document.getElementById('article-cpoyright');
+  var text = document.getElementById('c-text');
+  text.style.display="block";
+
 }
+function out(){
+  var div = document.getElementById('article-cpoyright');
+  var text = document.getElementById('c-text');
+  text.style.display="none";
+}
+</script>
+
+<script type="text/javascript">
+function copyArticle(event) {
+  const range = document.createRange();
+  range.selectNode(document.getElementById('copyLink'));
+
+  const selection = window.getSelection();
+  if(selection.rangeCount > 0) selection.removeAllRanges();
+  selection.addRange(range);
+  document.execCommand('copy');
+}
+document.getElementById('copyBT').addEventListener('click', copyArticle, false);
 </script>
 
 
