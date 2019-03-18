@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tomcat配置ssl证书-幻凡ss
+  <title>电影-幻凡ss
   </title>
   <meta name="description" content="专注Java • 分享生活 • 记录人生">
   
@@ -173,18 +173,18 @@
     <div>
     <div class="container clearfix">
         <div class="l_main">
-      <article id="post-Tomcat配置ssl证书" class="post white-box article-type-post" itemscope="" itemprop="blogPost">
+      <article id="-movies" class="post white-box article-type-" itemscope="" itemprop="blogPost">
     <section class="meta">
 
         <h1 class="title">
-            <center>Tomcat配置ssl证书</center>
+            <center>电影</center>
         </h1>
 
 
  <center>
     <time>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>&nbsp;
-    <span>发表于 </span>2019-01-10-星期四&nbsp;&nbsp;|&nbsp;&nbsp;
+    <span>发表于 </span>2019-03-18-星期一&nbsp;&nbsp;|&nbsp;&nbsp;
     <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;
     阅读 &nbsp;(
     <span id="busuanzi_value_page_pv">计算中...</span>&nbsp;)
@@ -201,47 +201,417 @@
     <section class="article typo">
 
         <div class="article-entry" itemprop="articleBody">
-            <p>最近搞这个https搞的头疼，百度下载的ssl证书没有密码，纠结了很久</p>
-<p>特开贴记录一下，希望后来的同学们少走点弯路</p>
-<h2 id="下载证书"><a href="#下载证书" class="headerlink" title="下载证书"></a>下载证书</h2><p>这里以百度云为例（网上阿里的有很多教程，这里就不多赘述）</p>
-<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.file.myqcloud.com/2019/01/QQ%E5%9B%BE%E7%89%8720190110205459.png" alt="img"></a>;)</p>
-<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.file.myqcloud.com/2019/01/QQ%E5%9B%BE%E7%89%8720190110205711.png" alt="img"></a>;)</p>
-<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.file.myqcloud.com/2019/01/QQ%E5%9B%BE%E7%89%8720190110205801.png" alt="img"></a>;)</p>
-<p>这个密码就是证书的密码，起初我一直以为就是解压密码，最后问过百度客服才知道就是证书密码</p>
-<h2 id="配置tomcat"><a href="#配置tomcat" class="headerlink" title="配置tomcat"></a>配置tomcat</h2><p>1.将下载下来的后缀为jks的证书放入tomcat的conf目录下</p>
-<p>2.打开该目录下的server.xml，添加以下内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot; maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot; scheme=&quot;https&quot; secure=&quot;true&quot; keystoreFile=&quot;证书绝对路径&quot; keystorePass=&quot;证书密码&quot; clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p>另外修改原有内容</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">               connectionTimeout=&quot;20000&quot;</span><br><span class="line">               redirectPort=&quot;8443&quot; /&gt;</span><br><span class="line">&lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;8443&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p>修改为</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">               connectionTimeout=&quot;20000&quot;</span><br><span class="line">               redirectPort=&quot;443&quot; /&gt;</span><br><span class="line">&lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;443&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p>OK后，重启下tomcat，进入<a href="https://localhost" target="_blank" rel="noopener">https://localhost</a>会跳转到<a href="https://localhost" target="_blank" rel="noopener">https://localhost</a></p>
-<p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.file.myqcloud.com/2019/01/QQ%E5%9B%BE%E7%89%8720190110210951.png" alt="img"></a>;)</p>
-<h2 id="如果部署的是java-web项目，还需要以下配置"><a href="#如果部署的是java-web项目，还需要以下配置" class="headerlink" title="如果部署的是java web项目，还需要以下配置"></a>如果部署的是java web项目，还需要以下配置</h2><p>tomcat/conf/server.xml</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Context path=&quot;/&quot; reloadable=&quot;true&quot; docBase=&quot;项目绝对路径&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<p>web项目的web.xml中还需要更改（包含在根标签内，之上）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 跳转https --&gt;  </span><br><span class="line">    &lt;security-constraint&gt;  </span><br><span class="line">         &lt;web-resource-collection &gt;  </span><br><span class="line">            &lt;web-resource-name &gt;SSL&lt;/web-resource-name&gt;  </span><br><span class="line">            &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  </span><br><span class="line">        &lt;/web-resource-collection&gt;  </span><br><span class="line">        &lt;user-data-constraint&gt;  </span><br><span class="line">            &lt;transport-guarantee&gt;CONFIDENTIAL&lt;/transport-guarantee&gt;  </span><br><span class="line">        &lt;/user-data-constraint&gt;  </span><br><span class="line">    &lt;/security-constraint&gt;</span><br></pre></td></tr></table></figure>
-<p>此配置目的：将所有请求转为https</p>
-<p>OK，大功告成，重启tomcat，访问localhost就可以看到效果了</p>
+            <blockquote>
+    <p>电影分享</p>
+</blockquote>
+
+<style>
+    
+.hexo-douban-tabs {
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.hexo-douban-tab {
+    padding: 5px;
+}
+
+.hexo-douban-active {
+    background: #657b83;
+    color: #fff;
+}
+
+.hexo-douban-item {
+    padding-bottom: 10px;
+    position: relative;
+    clear: both;
+    min-height: 170px;
+    padding: 10px 0;
+    border-bottom: 1px #ddd solid;
+}
+
+@media screen and (max-width: 600px) {
+    .hexo-douban-item {
+        width: 100%;
+    }
+}
+
+.hexo-douban-picture {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100px;
+}
+
+.hexo-douban-info {
+    padding-left: 120px;
+}
+
+.hexo-douban-meta {
+    font-size: 12px;
+    padding-right: 10px;
+}
+
+.hexo-douban-comments {
+    font-size: 12px;
+}
+
+.hexo-douban-pagination {
+    margin-top: 15px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.hexo-douban-button {
+    padding: 5px;
+}
+
+.hexo-douban-button:hover {
+    background: #657b83;
+    color: #fff;
+}
+
+.hexo-douban-hide {
+    display: none;
+}
+
+.hexo-douban-show {
+    display: block;
+}
+
+
+</style>
+
+<div class="hexo-douban-tabs">
+    <a class="hexo-douban-tab" id="hexo-douban-tab1" href="javascript:;" rel="external">
+        在看
+        (0)</a>
+    <a class="hexo-douban-tab" id="hexo-douban-tab2" href="javascript:;" rel="external">
+        想看
+        (4)</a>
+    <a class="hexo-douban-tab" id="hexo-douban-tab3" href="javascript:;" rel="external">
+        已看
+        (8)</a>
+</div>
+<div>
+    <div id="hexo-douban-item1">
+        
+        <div class="hexo-douban-pagination">
+    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
+    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
+    <span class="hexo-douban-pagenum">2 / 3</span>
+    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
+    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
+</div>
+    </div>
+    <div id="hexo-douban-item2">
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1902764634.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/3148966/">末世殖民地 / The Colony</a>
+        </div>
+        <div class="hexo-douban-meta">2013-04-12(加拿大) / 2013-09-20(美国) / 劳伦斯·菲什伯恩 / 凯文·席格斯 / 比尔·帕克斯顿 / 夏洛蒂·苏利文 / 德鲁·维尔戈维尔 / 金伯利·苏·莫里 / 迈克尔·曼多 / 加拿大 / 杰夫·兰弗洛 / 95分钟 / 末世殖民地 / 动作 / 科幻 / 惊悚 / 灾难 / Patrick Tarr / Pascal Trottier / 英语</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2535510995.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/26970809/">时间陷阱 / Time Trap</a>
+        </div>
+        <div class="hexo-douban-meta">2017-05-19(西雅图电影节) / 2018-11-02(美国) / 安德鲁·威尔逊 / 卡西迪·吉福德 / 布里安娜·豪伊 / 雷利·麦克伦顿 / 马克思·怀特 / 汉斯·马雷罗 / 戈泊尔·比达里 / 特洛伊·迪林格 / 美国 / 马克·丹尼斯 / 本·福斯特 / 本·福斯特 / 87分钟 / 时间陷阱 / 动作 / 科幻 / 冒险 / 马克·丹尼斯 Mark Dennis / 英语</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1586994581.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/10430817/">隐墙 / Die Wand</a>
+        </div>
+        <div class="hexo-douban-meta">2012-02-12(柏林电影节) / 2012-10-11(德国) / 马蒂娜·格德克 / Karlheinz Hackl / Wolfgang M. Bauer / Ulrike Beimpold / Julia Gschnitzer / 德国 / 奥地利 / www.diewand-derfilm.at / Julian Pölsler / 108分钟 / 隐墙 / 剧情 / 奇幻 / Marlen Haushofer / Julian Pölsler / 德语</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2316184868.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/1958499/">超完美地狱 / Den brysomme mannen</a>
+        </div>
+        <div class="hexo-douban-meta">2006-05-26 / 斯荣德·福斯·奥瓦格 / 佩特妮拉·巴克 / Bjørn Jenseg / Ellen Horn / Sigve Bøe / Anders T. Andersen / 乔安娜斯·乔内尔 / Jørgen Storm Rosenberg / 挪威 / 冰岛 / 杨斯·连恩 / 95 分钟 / 超完美地狱 / 喜剧 / 剧情 / 奇幻 / 悬疑 / Per Schreiner / 挪威语</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-pagination">
+    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
+    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
+    <span class="hexo-douban-pagenum">2 / 3</span>
+    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
+    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
+</div>
+    </div>
+    <div id="hexo-douban-item3">
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2278626199.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/24875658/">我的青春期</a>
+        </div>
+        <div class="hexo-douban-meta">2019-03-18 /  青春 爱情 郝杰 包贝尔 / ★★★★★ 力荐 </div>
+        <div class="hexo-douban-comments"> 初恋只能存在于回忆当中</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p638370170.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/2080133/">男儿本色</a>
+        </div>
+        <div class="hexo-douban-meta">2019-03-18 /  励志 男儿本色 香港 谢霆锋 余文乐 陈木胜 动作 香港电影 警匪 / ★★★★★ 力荐 </div>
+        <div class="hexo-douban-comments"> 看过这个片子才认同谢霆锋</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1501508471.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/1839857/">隔山有眼2 / The Hills Have Eyes II</a>
+        </div>
+        <div class="hexo-douban-meta">2019-03-18 /  悬疑 隔山有眼 恐怖片 暴力 恐怖 惊悚 隔山有眼2 / ★★★★★ 力荐 </div>
+        <div class="hexo-douban-comments"> 第一步接触的外国惊悚片，相当给力，不可错过</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2200535672.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/1453067/">隔山有眼 / The Hills Have Eyes</a>
+        </div>
+        <div class="hexo-douban-meta">2019-03-18 /  恐怖片 悬疑 隔山有眼 血腥 惊悚 / ★★★★★ 力荐 </div>
+        <div class="hexo-douban-comments"> 第一步接触的外国惊悚片，相当给力</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1201868142.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/5180661/">尖声啼哭 / Squeal</a>
+        </div>
+        <div class="hexo-douban-meta">2019-03-18 /  血腥 B级片 恐怖 美国电影 猪八戒 猪 恐怖片 / ★★★☆☆ 还行 </div>
+        <div class="hexo-douban-comments"> 喜欢惊悚的不可错过</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1929128940.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/1293656/">惊爆银河系 / Galaxy Quest</a>
+        </div>
+        <div class="hexo-douban-meta">2019-03-18 /  奇幻 美国 科幻 探险 超现代 时空穿越 / ★★☆☆☆ 较差 </div>
+        <div class="hexo-douban-comments"> 一群科幻片演员遇到了真正的外星人</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2113506451.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/5154212/">男孩丹尼 / Danny Boy</a>
+        </div>
+        <div class="hexo-douban-meta">2019-03-18 /  励志 感悟 / ★★★★★ 力荐 </div>
+        <div class="hexo-douban-comments"> 勇气却抵不过世俗的污蔑，如果是你，你会怎么选</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-item">
+    <div class="hexo-douban-picture"><img src="/assets/douban-loading.gif" data-src="https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2302252776.jpg" referrerpolicy="no-referrer"></div>
+    <div class="hexo-douban-info">
+        <div class="hexo-douban-title">
+            <a target="_blank" href="https://movie.douban.com/subject/26697843/">如斯星球 / The Looking Planet</a>
+        </div>
+        <div class="hexo-douban-meta">2019-03-18 /  脑洞 / ★★★★☆ 推荐 </div>
+        <div class="hexo-douban-comments"> 脑洞很大</div>
+    </div>
+</div>
+
+
+        
+        <div class="hexo-douban-pagination">
+    <a class="hexo-douban-button hexo-douban-firstpage" href="javascript:;"> 首页</a>
+    <a class="hexo-douban-button hexo-douban-previouspage" href="javascript:;">上一页</a>
+    <span class="hexo-douban-pagenum">2 / 3</span>
+    <a class="hexo-douban-button hexo-douban-nextpage" href="javascript:;">下一页</a>
+    <a class="hexo-douban-button hexo-douban-lastpage" href="javascript:;">尾页</a>
+</div>
+    </div>
+</div>
+
+<script>
+    /**
+ * Created by myths on 18-2-8.
+ */
+
+Element.prototype.siblings = function () {
+    var siblingElement = [];
+    var sibs = this.parentNode.children;
+    for (var i = 0; i < sibs.length; i++) {
+        if (sibs[i] !== this) {
+            siblingElement.push(sibs[i]);
+        }
+    }
+    return siblingElement;
+};
+function tabClick() {
+    //修改标签样式
+    this.classList.add('hexo-douban-active');
+    var sibs = this.siblings();
+    for (var j = 0; j < sibs.length; j++) {
+        sibs[j].classList.remove('hexo-douban-active');
+    }
+    //显示对应板块
+    var itemId = this.id.replace('tab', 'item');
+    var target = document.getElementById(itemId);
+    target.classList.remove('hexo-douban-hide');
+    target.classList.add('hexo-douban-show');
+    sibs = document.getElementById(itemId).siblings();
+    for (var k = 0; k < sibs.length; k++) {
+        sibs[k].classList.remove('hexo-douban-show');
+        sibs[k].classList.add('hexo-douban-hide');
+    }
+}
+var tabs = document.getElementsByClassName("hexo-douban-tab");
+for (var i = 0; i < tabs.length; i++) {
+    tabs[i].onclick = tabClick;
+    tabs[i].onclick.apply(tabs[i]);
+}
+tabs[2].click();
+
+    var firstpages = document.getElementsByClassName("hexo-douban-firstpage");
+var previouspages = document.getElementsByClassName("hexo-douban-previouspage");
+var nextpages = document.getElementsByClassName("hexo-douban-nextpage");
+var lastpages = document.getElementsByClassName("hexo-douban-lastpage");
+var pagenums = document.getElementsByClassName("hexo-douban-pagenum");
+
+function makePageNum(num, arr) {
+    return (num + 1) + ' / ' + (Math.ceil(arr.length / 10 === 0 ? 1 : Math.ceil(arr.length / 10)));
+}
+
+function firstBtn() {
+    var sibs = this.parentNode.siblings();
+    displayPage(sibs, 0);
+    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(0, sibs);
+}
+
+function previousBtn() {
+    var sibs = this.parentNode.siblings();
+    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
+    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
+    currNum = parseInt(currNum, 10) - 1;
+    if (currNum > 0) {
+        currNum--;
+    }
+    displayPage(sibs, currNum);
+    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
+}
+
+function nextBtn() {
+    var sibs = this.parentNode.siblings();
+    var currNum = this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText;
+    currNum = currNum.substr(0, currNum.indexOf('/') - 1);
+    currNum = parseInt(currNum, 10) - 1;
+    if (currNum < Math.ceil(sibs.length / 10) - 1) {
+        currNum++;
+    }
+    displayPage(sibs, currNum);
+    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(currNum, sibs);
+}
+
+function lastBtn() {
+    var sibs = this.parentNode.siblings();
+    displayPage(sibs, Math.ceil(sibs.length / 10) - 1);
+    this.parentNode.getElementsByClassName('hexo-douban-pagenum')[0].innerText = makePageNum(Math.ceil(sibs.length / 10) - 1 === -1 ? 0 : Math.ceil(sibs.length / 10) - 1, sibs);
+}
+
+function displayPage(arr, num) {
+    for (var i = 0; i < arr.length; i++) {
+        if (Math.floor(i / 10) === num) {
+            arr[i].classList.remove('hexo-douban-hide');
+            var img = arr[i].getElementsByTagName('img')[0];
+            img.src = img.getAttribute('data-src');
+        } else {
+            arr[i].classList.add('hexo-douban-hide');
+        }
+    }
+}
+
+for (var i = 0; i < firstpages.length; i++) {
+
+    //add listener
+    firstpages[i].onclick = firstBtn;
+    previouspages[i].onclick = previousBtn;
+    nextpages[i].onclick = nextBtn;
+    lastpages[i].onclick = lastBtn;
+
+    //set page num
+    var size = pagenums[i].parentNode.siblings().length;
+    pagenums[i].innerText = '1 / ' + (Math.ceil(size / 10) === 0 ? 1 : Math.ceil(size / 10));
+    firstpages[i].click();
+}
+
+</script>
+
+
         </div>
         <br><br>
 
-<div title="未经允许不得转载" class="post-copyright">未经允许不得转载： 幻凡ss » <span style="color: #ce8134">Tomcat配置ssl证书</span></div>
+<div title="未经允许不得转载" class="post-copyright">未经允许不得转载： 幻凡ss » <span style="color: #ce8134">电影</span></div>
 
 
 
  
 <div class="share">
 <span style="vertical-align: text-bottom;font-size:14px">分享到：</span>
-<a title="分享到微博" href="javascript:" onclick="window.open('http://service.weibo.com/share/share.php?url=https://hfanss.com/2019/Tomcat配置ssl证书.html&sharesource=weibo&title=【Tomcat配置ssl证书 - 幻凡ss】 最近搞这个https搞的头疼，百度下载的ssl证书没有密码，纠结了很久.特开贴记录一下，希望后来的同学们少走点弯路...&pic=https://blog-1252958858.file.myqcloud.com/2019/01/upload__3c7f1d18_16837ee07af__8000_00000000.jpg&appkey=2706825840','','height=400,width=711,left=100,right=100,scrollbars=yes,status=yes')">
+<a title="分享到微博" href="javascript:" onclick="window.open('http://service.weibo.com/share/share.php?url=&sharesource=weibo&title=【电影 - 幻凡ss】 ...&pic=&appkey=2706825840','','height=400,width=711,left=100,right=100,scrollbars=yes,status=yes')">
 
 <span class="iconfont icon-weibo"></span>
 
-<a title="分享到QQ空间" href="javascript:" onclick="window.open('https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://hfanss.com/2019/Tomcat配置ssl证书.html&sharesource=qzone&title=【Tomcat配置ssl证书 - 幻凡ss】&pics=https://blog-1252958858.file.myqcloud.com/2019/01/upload__3c7f1d18_16837ee07af__8000_00000000.jpg&summary=最近搞这个https搞的头疼，百度下载的ssl证书没有密码，纠结了很久.特开贴记录一下，希望后来的同学们少走点弯路...','','height=598,width=711,scrollbars=yes,status=yes')">
+<a title="分享到QQ空间" href="javascript:" onclick="window.open('https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=&sharesource=qzone&title=【电影 - 幻凡ss】&pics=&summary=...','','height=598,width=711,scrollbars=yes,status=yes')">
 
 <span class="iconfont icon-qqkongjian"></span>
 
-<a title="分享到QQ好友" href="javascript:" onclick="window.open('http://connect.qq.com/widget/shareqq/index.html?url=https://hfanss.com/2019/Tomcat配置ssl证书.html&title=【Tomcat配置ssl证书 - 幻凡ss】&pics=https://blog-1252958858.file.myqcloud.com/2019/01/upload__3c7f1d18_16837ee07af__8000_00000000.jpg&summary=幻凡ss&desc=','','height=598,width=711,scrollbars=yes,status=yes')">
+<a title="分享到QQ好友" href="javascript:" onclick="window.open('http://connect.qq.com/widget/shareqq/index.html?url=&title=【电影 - 幻凡ss】&pics=&summary=幻凡ss&desc=','','height=598,width=711,scrollbars=yes,status=yes')">
 
 <span class="iconfont icon-QQ"></span>
 
@@ -250,46 +620,9 @@
 
 
        
-            <div class="article-tags tags">
-                
-                   <a href="/tags/Java/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;Java</a>
-                
-            </div>
-        
 
         
-            <div class="prev-next">
-                
-                    <section class="prev">
-                        <span class="art-item-left">
-                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
-                            <h4>
-                                <a href="/2019/对list中对象的某一属性排序.html" rel="prev" title="对list中对象的某一属性排序">
-                                  
-                                      对list中对象的某一属性排序
-                                  
-                                </a>
-                            </h4>
-                    </span></section>
-                    
-                    <div class="fenge">
-                    </div>
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/2019/2019比挣钱更重要的是活着.html" rel="next" title="2019比挣钱更重要的是活着">
-                                    
-                                        2019比挣钱更重要的是活着
-                                    
-                                </a>
-                            </h4>
-                        </span></section></div>
-                    </section>
-                        
-            
-    
+    </section>
 
 </article>
 
@@ -300,22 +633,7 @@
     <article class="post white-box comments">
         <section class="article typo">
             
-                <div class="recommended_posts">
-        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;文章推荐</h4>
-        <ul>
-            
-                <li><a href="https://hfanss.com/2019/快速搭建Java生产环境.html">快速搭建Java生产环境</a></li>
-            
-                <li><a href="https://hfanss.com/2019/对list中对象的某一属性排序.html">对list中对象的某一属性排序</a></li>
-            
-                <li><a href="https://hfanss.com/2019/2019比挣钱更重要的是活着.html">2019比挣钱更重要的是活着</a></li>
-            
-                <li><a href="https://hfanss.com/2018/用Java做一个简单的打字游戏.html">用Java做一个简单的打字游戏</a></li>
-            
-                <li><a href="https://hfanss.com/2018/利用构造函数对实体类的属性进行初始化.html">Java利用构造函数对实体类的属性进行初始化</a></li>
-            
-        </ul>
-    </div>
+                
             
 
             
@@ -344,7 +662,7 @@
 
 <script>
     window.subData = {
-        title: 'Tomcat配置ssl证书',
+        title: '电影',
         tools: true
     }
 </script>
@@ -425,14 +743,7 @@
     
 
     
-        <section class="m_widget toc-wrapper">
-        <div class="celan-title"><div class="celan-title-i"><i style="color:#0099FF" class="fa fa-list-ul"></i></div>目录</div>
-<!--             <div class='wrapper'><a style="margin-right: 30px;" class="s-toc rightBtn" title="固定到顶部"
-             rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fa fa-thumbtack fa-fw"></i></a></div> -->
-        <div class="content">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载证书"><span class="toc-text">下载证书</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置tomcat"><span class="toc-text">配置tomcat</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如果部署的是java-web项目，还需要以下配置"><span class="toc-text">如果部署的是java web项目，还需要以下配置</span></a></li></ol>
-        </div>
-    </section>
+        
     
 
     
@@ -592,11 +903,6 @@ function show_runtime(){
 <script src="/js/back.top.js"></script>
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
-
-
-
-    
-
 
 
 

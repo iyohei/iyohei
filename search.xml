@@ -164,29 +164,6 @@
     </entry>
     
     <entry>
-      <title>JDBC链接数据库</title>
-      <link href="/2018/Java%E5%88%A9%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AF%B9%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E5%88%9D%E5%A7%8B%E5%8C%96.html"/>
-      <url>/2018/Java%E5%88%A9%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AF%B9%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E5%88%9D%E5%A7%8B%E5%8C%96.html</url>
-      
-        <content type="html"><![CDATA[<blockquote><p>学习记录：复习</p><p>JDBC简单链接数据库</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**    关闭资源用*/</span><br><span class="line">Connection conn = null;</span><br><span class="line">Statement stmt = null;</span><br><span class="line">ResultSet rest = null;</span><br><span class="line">/**设置url,user,password,sql*/</span><br><span class="line">String url = &quot;jdbc:mysql://localhost:3306/kevin?useUnicode=true&amp;characterEncoding=utf-8&quot;;</span><br><span class="line">String user = &quot;root&quot;;</span><br><span class="line">String password = &quot;123456&quot;;</span><br><span class="line">String sql = &quot;select * from blog&quot;;</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">// 注册驱动</span><br><span class="line">Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">// 获得数据库链接</span><br><span class="line">conn = DriverManager.getConnection(url, user, password);</span><br><span class="line">// 获得Statement</span><br><span class="line">stmt = conn.createStatement();</span><br><span class="line">rest = stmt.executeQuery(sql);</span><br><span class="line">while (rest.next())</span><br><span class="line">&#123;</span><br><span class="line">System.out.println(rest.getString(&quot;title&quot;) + &quot;_&quot; + rest.getString(&quot;viceTitle&quot;));</span><br><span class="line">&#125;</span><br><span class="line">&#125; catch (Exception e)</span><br><span class="line">&#123;</span><br><span class="line">System.err.println(&quot;发生异常：&quot;+e);</span><br><span class="line">&#125; finally</span><br><span class="line">&#123;//关闭资源</span><br><span class="line">rest.close();</span><br><span class="line">stmt.close();</span><br><span class="line">conn.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>关闭资源放在finally中</p><p>需引入mysql-connector-java-***.jar，如果没有使用maven可在<a href="https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-5.1.47.zip" target="_blank" rel="noopener">官网下载</a>或 <a href="https://pan.baidu.com/s/1_xQ_KfLhJ7skTJDfK5V8vg#list/path=%2Fjava%2Fmysql&amp;parentPath=%2Fjava" target="_blank" rel="noopener">我的网盘</a></p><p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.file.myqcloud.com/2019/01/upload__72bb97c_16828430b8f__8000_00000001.jpg" alt="QQ图片20180919200826.jpg"></a>;)</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> Java </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Java </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Java代码的优化</title>
       <link href="/2018/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%BC%98%E5%8C%96.html"/>
       <url>/2018/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%BC%98%E5%8C%96.html</url>
@@ -215,6 +192,29 @@
       <url>/2018/jsp%E7%BD%91%E7%AB%99ico%E5%9B%BE%E6%A0%87%E8%AE%BE%E7%BD%AE.html</url>
       
         <content type="html"><![CDATA[<blockquote><p>学习记录：小技巧</p><p>web项目中设置ico图标</p></blockquote><blockquote><p>ico图标放在webapp下</p></blockquote><p>在jsp页面中引入（ps:每个jsp都要引入,最好放在header或者footer既头部或尾部页面中，可以做到一处引用，多处使用）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--  网站图标 --&gt;&lt;link rel=&quot;shortcut icon&quot; href=&quot;../static/img/favicon.ico&quot;&gt;</span><br></pre></td></tr></table></figure><p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.file.myqcloud.com/2019/01/upload__72bb97c_16828430b8f__8000_00000000.jpg" alt="QQ图片20181024210453.jpg"></a>;)</p><p>各位可根据目录结构和引入地址适当更改</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>JDBC链接数据库</title>
+      <link href="/2018/Java%E5%88%A9%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AF%B9%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E5%88%9D%E5%A7%8B%E5%8C%96.html"/>
+      <url>/2018/Java%E5%88%A9%E7%94%A8%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%AF%B9%E5%AE%9E%E4%BD%93%E7%B1%BB%E7%9A%84%E5%B1%9E%E6%80%A7%E8%BF%9B%E8%A1%8C%E5%88%9D%E5%A7%8B%E5%8C%96.html</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>学习记录：复习</p><p>JDBC简单链接数据库</p></blockquote><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">/**    关闭资源用*/</span><br><span class="line">Connection conn = null;</span><br><span class="line">Statement stmt = null;</span><br><span class="line">ResultSet rest = null;</span><br><span class="line">/**设置url,user,password,sql*/</span><br><span class="line">String url = &quot;jdbc:mysql://localhost:3306/kevin?useUnicode=true&amp;characterEncoding=utf-8&quot;;</span><br><span class="line">String user = &quot;root&quot;;</span><br><span class="line">String password = &quot;123456&quot;;</span><br><span class="line">String sql = &quot;select * from blog&quot;;</span><br><span class="line">try</span><br><span class="line">&#123;</span><br><span class="line">// 注册驱动</span><br><span class="line">Class.forName(&quot;com.mysql.jdbc.Driver&quot;);</span><br><span class="line">// 获得数据库链接</span><br><span class="line">conn = DriverManager.getConnection(url, user, password);</span><br><span class="line">// 获得Statement</span><br><span class="line">stmt = conn.createStatement();</span><br><span class="line">rest = stmt.executeQuery(sql);</span><br><span class="line">while (rest.next())</span><br><span class="line">&#123;</span><br><span class="line">System.out.println(rest.getString(&quot;title&quot;) + &quot;_&quot; + rest.getString(&quot;viceTitle&quot;));</span><br><span class="line">&#125;</span><br><span class="line">&#125; catch (Exception e)</span><br><span class="line">&#123;</span><br><span class="line">System.err.println(&quot;发生异常：&quot;+e);</span><br><span class="line">&#125; finally</span><br><span class="line">&#123;//关闭资源</span><br><span class="line">rest.close();</span><br><span class="line">stmt.close();</span><br><span class="line">conn.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>关闭资源放在finally中</p><p>需引入mysql-connector-java-***.jar，如果没有使用maven可在<a href="https://cdn.mysql.com//Downloads/Connector-J/mysql-connector-java-5.1.47.zip" target="_blank" rel="noopener">官网下载</a>或 <a href="https://pan.baidu.com/s/1_xQ_KfLhJ7skTJDfK5V8vg#list/path=%2Fjava%2Fmysql&amp;parentPath=%2Fjava" target="_blank" rel="noopener">我的网盘</a></p><p><a href="javascript:void(0" target="_blank" rel="noopener"><img src="https://blog-1252958858.file.myqcloud.com/2019/01/upload__72bb97c_16828430b8f__8000_00000001.jpg" alt="QQ图片20180919200826.jpg"></a>;)</p>]]></content>
       
       
       <categories>
